@@ -510,6 +510,7 @@ nnoremap <silent> <F9> :TagbarToggle<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => YankRing plugin
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:yankring_clipboard_monitor = 1
 nnoremap <silent> <F11> :YRShow<CR>
 nnoremap <silent> <C-F11> :YRSearch 
 
