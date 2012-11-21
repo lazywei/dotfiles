@@ -50,22 +50,21 @@ Bundle 'tpope/vim-surround.git'
 Bundle 'majutsushi/tagbar.git'
 Bundle 'Shougo/neocomplcache'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'Lokaltog/EasyMotion'
 Bundle 'tpope/vim-fugitive.git'
 Bundle 'tpope/vim-rails.git'
 Bundle 'lazywei/vim-language-specific'
+Bundle 'vim-scripts/YankRing.vim.git'
 " For snipmate
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "honza/snipmate-snippets"
 Bundle "garbas/vim-snipmate"
 " ---
-" vim-scripts repos
 Bundle 'bufexplorer.zip'
-Bundle 'EasyMotion'
 Bundle 'sudo.vim.git'
 Bundle 'php.vim-for-php5'
 Bundle 'EasyGrep.git'
-Bundle 'YankRing.vim.git'
 Bundle 'Align'
 " my plugin
 Bundle 'color'
