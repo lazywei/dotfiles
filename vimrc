@@ -59,7 +59,7 @@ Bundle 'vim-scripts/YankRing.vim.git'
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "honza/snipmate-snippets"
-Bundle "garbas/vim-snipmate"
+Bundle "lazywei/vim-snipmate"
 " ---
 Bundle 'bufexplorer.zip'
 Bundle 'sudo.vim.git'
@@ -758,4 +758,3 @@ hi TabLineFill       cterm=reverse   gui=reverse
 hi TabLineMore       cterm=underline ctermfg=White ctermbg=236   gui=underline guifg=White   guibg=#303030
 hi TabLineSplitNr    cterm=underline ctermfg=148 ctermbg=240   gui=underline,italic guifg=#afd700   guibg=#6c6c6c
 hi TabLineSplitNrSel cterm=NONE      ctermfg=148 ctermbg=236   gui=NONE,italic      guifg=#afd700   guibg=#303030
-
