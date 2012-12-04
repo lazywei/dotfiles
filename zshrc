@@ -10,6 +10,7 @@ ZSH_THEME="robbyrussell"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias gdt="git difftool"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -29,7 +30,7 @@ ZSH_THEME="robbyrussell"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(archlinux bundle git encode64 gem rails3 vi-mode cap)
+plugins=(archlinux bundler git encode64 gem rails3 vi-mode cap extract)
 
 source $ZSH/oh-my-zsh.sh
 
