@@ -43,3 +43,4 @@ export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 
 hash -d ror="/srv/http/ror"
+export PATH=$PATH:$HOME/bin
