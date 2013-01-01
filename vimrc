@@ -20,7 +20,6 @@ set nocompatible
 "    -> Parenthesis/bracket expanding
 "    -> General Abbrevs
 "    -> Editing mappings
-"    -> Compile mappings
 "    -> Prepare for empty file
 "
 "    -> Plugins settings
@@ -101,6 +100,9 @@ map <leader>rc :tabe! ~/.vimrc<cr>
 
 " Yank to System clipboard
 map <S-c> "+y
+
+" Map esc to cancel search highlight
+nnoremap <esc> :noh<return><esc>
 
 " When vimrc is edited, reload it
 autocmd! bufwritepost vimrc source ~/.vimrc
@@ -470,22 +472,6 @@ nmap <tab> v>
 nmap <s-tab> v<
 vmap <tab> >gv
 vmap <s-tab> <gv
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Compile mappings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <F4> :!ruby %
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Prepare for empty file
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function PHPHeader()
-    if getfsize(@%) <= 0
-        execute "norm i<?php"
-    endif
-endfunction
-
-au BufRead,BufNewFile *.php call PHPHeader()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => bufExplorer plugin
