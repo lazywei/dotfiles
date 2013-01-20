@@ -20,7 +20,6 @@ set nocompatible
 "    -> Parenthesis/bracket expanding
 "    -> General Abbrevs
 "    -> Editing mappings
-"    -> Prepare for empty file
 "
 "    -> Plugins settings
 "
@@ -54,6 +53,7 @@ Bundle 'tpope/vim-fugitive.git'
 Bundle 'tpope/vim-rails.git'
 Bundle 'lazywei/vim-language-specific'
 Bundle 'vim-scripts/YankRing.vim.git'
+Bundle 'xuhdev/SingleCompile'
 " For snipmate
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
@@ -519,6 +519,13 @@ set grepprg=grep\ -nH\ $*
 " 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
 " The following changes the default filetype back to 'tex':
 let g:tex_flavor='latex'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => SigleCompile plugin
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <F3> :SCCompile<cr>
+nmap <F4> :SCCompileRun<cr>
+call SingleCompile#ChooseCompiler('python', 'python2')
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
