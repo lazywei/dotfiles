@@ -54,6 +54,7 @@ Bundle 'tpope/vim-rails.git'
 Bundle 'lazywei/vim-language-specific'
 Bundle 'vim-scripts/YankRing.vim.git'
 Bundle 'xuhdev/SingleCompile'
+Bundle 'sjl/gundo.vim.git'
 " For snipmate
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
@@ -527,6 +528,10 @@ nmap <F3> :SCCompile<cr>
 nmap <F4> :SCCompileRun<cr>
 call SingleCompile#ChooseCompiler('python', 'python2')
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Gundo plugin
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <F5> :GundoToggle<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Tabline Set
