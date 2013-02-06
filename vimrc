@@ -54,6 +54,7 @@ Bundle 'tpope/vim-fugitive.git'
 Bundle 'tpope/vim-rails.git'
 Bundle 'vim-scripts/YankRing.vim.git'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'vim-scripts/simplefold'
 Bundle 'Valloric/MatchTagAlways'
 Bundle 'Valloric/vim-valloric-colorscheme'
 " YCM need extra binaries, see doc.
@@ -256,6 +257,8 @@ set expandtab
 set shiftwidth=4
 set tabstop=4
 set smarttab
+set autoindent          " on new lines, match indent of previous line
+set copyindent          " copy the previous indentation on autoindenting
 
 set lbr
 set tw=500
@@ -267,7 +270,7 @@ set wrap "Wrap lines
 set guitablabel=%t "set tab name
 
 " set indent for ruby
-" autocmd FileType ruby,eruby,yaml set ai sw=2 sts=2 et
+autocmd FileType ruby,eruby,yaml set tabstop=2 shiftwidth=2 softtabstop=2
 
 """"""""""""""""""""""""""""""
 " => Visual mode related
