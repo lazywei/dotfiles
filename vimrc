@@ -591,7 +591,7 @@ nnoremap <F5> :GundoToggle<CR>
 " can't use <tab> as our snippet key since I use that with YCM
 let g:UltiSnipsExpandTrigger       = "<m-s>"
 let g:UltiSnipsListSnippets        = "<c-m-s>"
-let g:UltiSnipsJumpForwardTrigger  = "<m-h>"
+let g:UltiSnipsJumpForwardTrigger  = "<m-s>"
 let g:UltiSnipsJumpBackwardTrigger = "<m-t>"
 let g:snips_author                 = 'LazyWei'
 
