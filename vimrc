@@ -53,6 +53,7 @@ Bundle 'tpope/vim-surround.git'
 Bundle 'tpope/vim-fugitive.git'
 Bundle 'tpope/vim-rails.git'
 Bundle 'vim-scripts/YankRing.vim.git'
+Bundle 'vim-ruby/vim-ruby'
 Bundle 'Valloric/MatchTagAlways'
 Bundle 'Valloric/vim-valloric-colorscheme'
 " YCM need extra binaries, see doc.
@@ -266,7 +267,7 @@ set wrap "Wrap lines
 set guitablabel=%t "set tab name
 
 " set indent for ruby
-autocmd FileType ruby,eruby,yaml set ai sw=2 sts=2 et
+" autocmd FileType ruby,eruby,yaml set ai sw=2 sts=2 et
 
 """"""""""""""""""""""""""""""
 " => Visual mode related
