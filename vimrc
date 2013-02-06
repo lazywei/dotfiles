@@ -4,7 +4,7 @@ set nocompatible
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Maintainer: LazyWei
-"             xobkkmp3@gmail.com
+"             jrweizhang AT gmail DOT com
 
 " Sections:
 "    -> Set Vundle (plugins manager)
@@ -42,38 +42,61 @@ Bundle 'gmarik/vundle'
 " My Bundles here:
 "
 " original repos on github
-Bundle 'scrooloose/nerdtree.git'
-Bundle 'ervandew/supertab.git'
-Bundle 'tpope/vim-surround.git'
-Bundle 'majutsushi/tagbar.git'
-Bundle 'Shougo/neocomplcache'
+Bundle 'godlygeek/tabular'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'Lokaltog/EasyMotion'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'scrooloose/nerdtree.git'
+Bundle 'sjl/gundo.vim.git'
+Bundle 'SirVer/ultisnips'
+Bundle 'tpope/vim-surround.git'
 Bundle 'tpope/vim-fugitive.git'
 Bundle 'tpope/vim-rails.git'
-Bundle 'lazywei/vim-language-specific'
 Bundle 'vim-scripts/YankRing.vim.git'
-Bundle 'xuhdev/SingleCompile'
-Bundle 'sjl/gundo.vim.git'
-" For snipmate
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "honza/snipmate-snippets"
-Bundle "lazywei/vim-snipmate"
+Bundle 'Valloric/MatchTagAlways'
+Bundle 'Valloric/vim-valloric-colorscheme'
+" YCM need extra binaries, see doc.
+Bundle 'Valloric/YouCompleteMe' 
 " ---
-Bundle 'bufexplorer.zip'
-Bundle 'sudo.vim.git'
-Bundle 'php.vim-for-php5'
-Bundle 'EasyGrep.git'
-Bundle 'Align'
+Bundle 'vim-scripts/ruby-matchit'
+Bundle 'xuhdev/SingleCompile'
+Bundle 'xolox/vim-notes'
 " my plugin
+Bundle 'lazywei/vim-language-specific'
+Bundle 'lazywei/vim-doc-tw'
+" Need for vgod's color when use vim in terminal
 Bundle 'color'
-Bundle 'tw-doc'
+" less use
+Bundle 'EasyGrep.git'
+Bundle 'majutsushi/tagbar.git'
+Bundle 'bufexplorer.zip'
+" Bundle 'scrooloose/syntastic'
+" Bundle 'php.vim-for-php5'
 " Bundle 'vim-latex-1.8.23'
+" Bundle 'Shougo/neocomplcache'
+" Bundle 'ervandew/supertab.git'
+" For snipmate
+" Bundle 'MarcWeber/vim-addon-mw-utils'
+" Bundle 'tomtom/tlib_vim'
+" Bundle 'honza/snipmate-snippets'
+" Bundle 'lazywei/vim-snipmate'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" In normal mode, we use : much more often than ; so lets swap them.
+" WARNING: this will cause any "ordinary" map command without the "nore" prefix
+" that uses ":" to fail. For instance, "map <f2> :w" would fail, since vim will
+" read ":w" as ";w" because of the below remappings. Use "noremap"s in such
+" situations and you'll be fine.
+nnoremap ; :
+nnoremap : ;
+vnoremap ; :
+vnoremap : ;
+
+" Toggle and untoggle spell checking
+noremap <leader>ss :setlocal spell! spelllang=en_us<cr>
+
 " Set IM disable and enable for Chinese Input
 autocmd InsertEnter * set noimdisable
 autocmd InsertLeave * set imdisable
@@ -89,15 +112,15 @@ filetype indent on
 set autoread
 
 " With a map leader it's possible to do extra key combinations
-" like <leader>w saves the current file
+" like <leader>ww saves the current file
 let mapleader = ","
 let g:mapleader = ","
 
 " Fast saving
-nmap <leader>ww :w!<cr>
+nnoremap <leader>ww :w!<cr>
 
 " Fast editing of the .vimrc
-map <leader>rc :tabe! ~/.vimrc<cr>
+noremap <leader>rc :tabe! ~/.vimrc<cr>
 
 " Yank to System clipboard
 map <S-c> "+y
@@ -112,6 +135,7 @@ func! MySys()
     return "linux"
 endfun
 
+" Auto go to the location last time edit when open files.
 " 自動回到最後離開時的編輯位置
 if has("autocmd")
     autocmd BufRead *.txt set tw=78
@@ -186,8 +210,8 @@ if has("gui_running")
     "不管 normal , visual , select mode 都要用 輸入文字 的游標
     set mouseshape+=n:beam,v:beam,s:beam,i:beam 
     set t_Co=256
-    set background=dark
-    colorscheme ansi_blows
+    set background=light
+    colorscheme valloric
     set cursorline " highlight current line
     highlight CursorLine 	guibg=#003853 ctermbg=24  gui=none cterm=none
 else
@@ -254,7 +278,7 @@ vnoremap <silent> # :call VisualSearch('b')<CR>
 
 " When you press gv you vimgrep after the selected text
 vnoremap <silent> gv :call VisualSearch('gv')<CR>
-map <leader>g :vimgrep // **/*.<left><left><left><left><left><left><left>
+noremap <leader>g :vimgrep // **/*.<left><left><left><left><left><left><left>
 
 
 function! CmdLine(str)
@@ -337,11 +361,10 @@ endfunc
 " Treat long lines as break lines (useful when moving around in them):
 map j gj
 map k gk
-
 " Map space to / (search) and c-space to ? (backgwards search)
-map <space> /
+map <space> /\v
 map <c-space> ?
-map <silent> <leader><cr> :noh<cr>
+noremap <silent> <leader><cr> :noh<cr>
 
 " Smart way to move btw. windows
 " map <C-j> <C-W>j
@@ -354,27 +377,27 @@ map `k <C-W>k
 map `l <C-W>l
 
 " Close the current buffer
-map <leader>bd :Bclose<cr>
+noremap <leader>bd :Bclose<cr>
 
 " Close all the buffers
-map <leader>ba :1,300 bd!<cr>
+noremap <leader>ba :1,300 bd!<cr>
 
 " Use the arrows to something usefull
-map <right> :bn<cr>
-map <left> :bp<cr>
+noremap <right> :bn<cr>
+noremap <left> :bp<cr>
 
 " Tab configuration
-map <leader>tn :tabnew<cr>
-map <leader>te :tabedit 
-map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove 
+noremap <leader>tn :tabnew<cr>
+noremap <leader>te :tabedit 
+noremap <leader>tc :tabclose<cr>
+noremap <leader>tm :tabmove 
 
 " When pressing <leader>cd switch to the directory of the open buffer
-map <leader>cd :cd %:p:h<cr>
+noremap <leader>cd :cd %:p:h<cr>
 
 " 切換 tab
-nmap <S-H> :tabp<ENTER>
-nmap <S-L> :tabn<ENTER>
+nnoremap <S-H> :tabp<ENTER>
+nnoremap <S-L> :tabn<ENTER>
 
 command! Bclose call <SID>BufcloseCloseIt()
 function! <SID>BufcloseCloseIt()
@@ -444,10 +467,10 @@ map gf <C-w>gf
 map 0 ^
 
 "Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
-nmap <M-j> mz:m+<cr>`z
-nmap <M-k> mz:m-2<cr>`z
-vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
-vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
+nnoremap <M-j> mz:m+<cr>`z
+nnoremap <M-k> mz:m-2<cr>`z
+vnoremap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
+vnoremap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
 
 if MySys() == "mac"
     nmap <D-j> <M-j>
@@ -465,8 +488,8 @@ endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
 
 " Hot key to switch between Big5 and UTF-8
-map <C-u> :set fileencoding=utf-8<CR>
-map <C-b> :set fileencoding=big5<CR>
+noremap <M-u> :set fileencoding=utf-8<CR>
+noremap <M-b> :set fileencoding=big5<CR>
 
 " 縮排
 nmap <tab> v>
@@ -475,17 +498,25 @@ vmap <tab> >gv
 vmap <s-tab> <gv
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Vim-indent-guides plugin
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_color_change_percent = 7
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => bufExplorer plugin
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:bufExplorerDefaultHelp=0
 let g:bufExplorerShowRelativePath=1
-map <leader>o :BufExplorer<cr>
+noremap <leader>o :BufExplorer<cr>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => NERD_tree plugin
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <F2> :NERDTreeToggle<CR>
+" This makes the dir of the current file the root of the nerdtree;
+" in effect, it re-centers the nerdtree on the current file's folder.
+noremap <F2> :NERDTreeToggle<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -497,41 +528,68 @@ nnoremap <silent> <F9> :TagbarToggle<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => YankRing plugin
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:yankring_clipboard_monitor = 1
+let g:yankring_history_dir = '$HOME/tmp/vim'
+"let g:yankring_clipboard_monitor = 1
 nnoremap <silent> <F11> :YRShow<CR>
 nnoremap <silent> <C-F11> :YRSearch 
+
+" this makes Y yank from the cursor to the end of the line, which makes more
+" sense than the default of yanking the whole current line (we can use yy for that)
+function! YRRunAfterMaps()
+    nnoremap Y   :<C-U>YRYankCount 'y$'<CR>
+endfunction
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Vim-notes
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:notes_directory = '~/notes'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Syntastic
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:syntastic_error_symbol = '✗'
+"let g:syntastic_warning_symbol = '⚠'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => tabular plugin
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" looks at the current line and the lines above and below it and aligns all the
+" equals signs; useful for when we have several lines of declarations
+nnoremap <Leader>a= :Tabularize /=<CR>
+vnoremap <Leader>a= :Tabularize /=<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => neocomplcache plugin
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_disable_auto_complete = 1
-let g:SuperTabDefaultCompletionType = "<C-X><C-U>"
+" let g:neocomplcache_enable_at_startup = 1
+" let g:neocomplcache_disable_auto_complete = 1
+" let g:SuperTabDefaultCompletionType = "<C-X><C-U>"
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => latex plugin
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" IMPORTANT: grep will sometimes skip displaying the file name if you
-" search in a singe file. This will confuse Latex-Suite. Set your grep
-" program to always generate a file-name.
-set grepprg=grep\ -nH\ $*
-
-" OPTIONAL: Starting with Vim 7, the filetype of empty .tex files defaults to
-" 'plaintex' instead of 'tex', which results in vim-latex not being loaded.
-" The following changes the default filetype back to 'tex':
-let g:tex_flavor='latex'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => SigleCompile plugin
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nmap <F3> :SCCompile<cr>
-nmap <F4> :SCCompileRun<cr>
+nnoremap <F3> :SCCompile<cr>
+nnoremap <F4> :SCCompileRun<cr>
 call SingleCompile#ChooseCompiler('python', 'python2')
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Gundo plugin
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <F5> :GundoToggle<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => UltiSnips plugin
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" can't use <tab> as our snippet key since I use that with YCM
+let g:UltiSnipsExpandTrigger       = "<m-s>"
+let g:UltiSnipsListSnippets        = "<c-m-s>"
+let g:UltiSnipsJumpForwardTrigger  = "<m-h>"
+let g:UltiSnipsJumpBackwardTrigger = "<m-t>"
+let g:snips_author                 = 'LazyWei'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Tabline Set
