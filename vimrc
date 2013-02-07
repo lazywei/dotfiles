@@ -48,7 +48,6 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'scrooloose/nerdtree.git'
 Bundle 'sjl/gundo.vim.git'
-Bundle 'SirVer/ultisnips'
 Bundle 'tpope/vim-surround.git'
 Bundle 'tpope/vim-fugitive.git'
 Bundle 'tpope/vim-rails.git'
@@ -66,6 +65,7 @@ Bundle 'xolox/vim-notes'
 " my plugin
 Bundle 'lazywei/vim-language-specific'
 Bundle 'lazywei/vim-doc-tw'
+Bundle 'lazywei/ultisnips'
 " Need for vgod's color when use vim in terminal
 Bundle 'color'
 " less use
@@ -200,7 +200,7 @@ elseif MySys() == "windows"
     set gfn=Bitstream\ Vera\ Sans\ Mono:h10
 elseif MySys() == "linux"
     set gfn=Monaco\ 14
-    set shell=/bin/bash
+    set shell=/bin/zsh
 endif
 
 if has("gui_running")

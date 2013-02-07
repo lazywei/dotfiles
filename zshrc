@@ -37,10 +37,6 @@ source $ZSH/oh-my-zsh.sh
 # Setting Path
 # export PATH=/home/kusoayan/.rvm/gems/ruby-1.9.3-p194/bin:/home/kusoayan/.rvm/gems/ruby-1.9.3-p194@global/bin:/home/kusoayan/.rvm/rubies/ruby-1.9.3-p194/bin:/home/kusoayan/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/vendor_perl:/usr/bin/core_perl:/opt/qt/bin:/home/kusoayan/.gem/ruby/1.9.1/bin:/home/kusoayan/.rvm/bin
 
-export PATH=$PATH:/home/kusoayan/.gem/ruby/1.9.1/bin
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
 
 hash -d ror="/srv/http/ror"
 export PATH=$PATH:$HOME/bin
