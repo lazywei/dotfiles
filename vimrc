@@ -26,7 +26,15 @@ set nocompatible
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Reset vimrc augroup
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" We reset the vimrc augroup. Autocommands are added to this group throughout
+" the file
+augroup vimrc
+  autocmd!
+augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Set Vundle (plugins manager)
@@ -86,6 +94,12 @@ Bundle 'bufexplorer.zip'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" With a map leader it's possible to do extra key combinations
+" like <leader>ww saves the current file
+let mapleader = ","
+let g:mapleader = ","
+
 " In normal mode, we use : much more often than ; so lets swap them.
 " WARNING: this will cause any "ordinary" map command without the "nore" prefix
 " that uses ":" to fail. For instance, "map <f2> :w" would fail, since vim will
@@ -96,8 +110,13 @@ nnoremap : ;
 vnoremap ; :
 vnoremap : ;
 
+
 " Toggle and untoggle spell checking
 noremap <leader>ss :setlocal spell! spelllang=en_us<cr>
+
+" Auto turn on spell check for markdown file, gitcommit
+autocmd vimrc FileType markdown setlocal spell! spelllang=en_us
+au vimrc FileType gitcommit setlocal spell! spelllang=en_us
 
 " Set IM disable and enable for Chinese Input
 autocmd InsertEnter * set noimdisable
@@ -113,16 +132,12 @@ filetype indent on
 " Set to auto read when a file is changed from the outside
 set autoread
 
-" With a map leader it's possible to do extra key combinations
-" like <leader>ww saves the current file
-let mapleader = ","
-let g:mapleader = ","
-
 " Fast saving
 nnoremap <leader>ww :w!<cr>
 
 " Fast editing of the .vimrc
 noremap <leader>rc :tabe! ~/.vimrc<cr>
+noremap <silent> <leader>V :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
 " Yank to System clipboard
 map <S-c> "+y
@@ -179,9 +194,9 @@ set showmatch "Show matching bracets when text indicator is over them
 set mat=2 "How many tenths of a second to blink
 
 " No sound on errors
-set noerrorbells
-set novisualbell
-set t_vb=
+" turns off all error bells, visual or otherwise
+set noerrorbells visualbell t_vb=
+autocmd vimrc GUIEnter * set visualbell t_vb=
 set tm=500
 
 " Add line numbers
