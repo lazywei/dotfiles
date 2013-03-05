@@ -58,7 +58,7 @@ Bundle 'scrooloose/nerdtree.git'
 Bundle 'sjl/gundo.vim.git'
 Bundle 'tpope/vim-surround.git'
 Bundle 'tpope/vim-fugitive.git'
-Bundle 'tpope/vim-rails.git'
+" Bundle 'tpope/vim-rails.git'
 Bundle 'vim-scripts/YankRing.vim.git'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'vim-scripts/simplefold'
@@ -118,10 +118,6 @@ noremap <leader>ss :setlocal spell! spelllang=en_us<cr>
 autocmd vimrc FileType markdown setlocal spell! spelllang=en_us
 au vimrc FileType gitcommit setlocal spell! spelllang=en_us
 
-" Set IM disable and enable for Chinese Input
-autocmd InsertEnter * set noimdisable
-autocmd InsertLeave * set imdisable
-
 " Sets how many lines of history VIM has to remember
 set history=700
 
@@ -149,7 +145,7 @@ nnoremap <esc> :noh<return><esc>
 autocmd! bufwritepost vimrc source ~/.vimrc
 
 func! MySys()
-    return "linux"
+    return "mac"
 endfun
 
 " Auto go to the location last time edit when open files.
@@ -209,8 +205,8 @@ syntax enable "Enable syntax hl
 
 " Set font according to system
 if MySys() == "mac"
-    set gfn=Menlo:h14
-    set shell=/bin/bash
+    set gfn=Menlo:h16
+    set shell=/bin/zsh
 elseif MySys() == "windows"
     set gfn=Bitstream\ Vera\ Sans\ Mono:h10
 elseif MySys() == "linux"
@@ -218,6 +214,7 @@ elseif MySys() == "linux"
     set shell=/bin/zsh
 endif
 
+colorscheme valloric
 if has("gui_running")
     set guioptions-=T "remove toolbar
     set guioptions-=r "remove right-hand scroll bar
@@ -593,7 +590,6 @@ vnoremap <Leader>a= :Tabularize /=<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <F3> :SCCompile<cr>
 nnoremap <F4> :SCCompileRun<cr>
-call SingleCompile#ChooseCompiler('python', 'python2')
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Gundo plugin
@@ -604,9 +600,9 @@ nnoremap <F5> :GundoToggle<CR>
 " => UltiSnips plugin
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " can't use <tab> as our snippet key since I use that with YCM
-let g:UltiSnipsExpandTrigger       = "<m-s>"
+let g:UltiSnipsExpandTrigger       = "<D-s>"
 let g:UltiSnipsListSnippets        = "<c-m-s>"
-let g:UltiSnipsJumpForwardTrigger  = "<m-s>"
+let g:UltiSnipsJumpForwardTrigger  = "<D-s>"
 let g:UltiSnipsJumpBackwardTrigger = "<m-t>"
 let g:snips_author                 = 'LazyWei'
 

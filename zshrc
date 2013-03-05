@@ -30,13 +30,17 @@ alias gdt="git difftool"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(archlinux bundler git encode64 gem rails3 vi-mode cap extract)
+plugins=(bundler git encode64 gem rails3 vi-mode cap extract)
 
 source $ZSH/oh-my-zsh.sh
 
 # Setting Path
 # export PATH=/home/kusoayan/.rvm/gems/ruby-1.9.3-p194/bin:/home/kusoayan/.rvm/gems/ruby-1.9.3-p194@global/bin:/home/kusoayan/.rvm/rubies/ruby-1.9.3-p194/bin:/home/kusoayan/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/vendor_perl:/usr/bin/core_perl:/opt/qt/bin:/home/kusoayan/.gem/ruby/1.9.1/bin:/home/kusoayan/.rvm/bin
 
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+export PATH=/usr/local/bin:$PATH
 
-hash -d ror="/srv/http/ror"
 export PATH=$PATH:$HOME/bin
+
+# For nodejs's npm
+export PATH=$PATH:/usr/local/share/npm/bin
