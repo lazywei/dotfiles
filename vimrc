@@ -49,7 +49,7 @@ Bundle 'gmarik/vundle'
 
 " My Bundles here:
 "
-" original repos on github
+Bundle 'airblade/vim-gitgutter'
 Bundle 'godlygeek/tabular'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'Lokaltog/vim-easymotion'
@@ -68,6 +68,7 @@ Bundle 'Valloric/vim-valloric-colorscheme'
 Bundle 'Valloric/YouCompleteMe' 
 " ---
 Bundle 'vim-scripts/ruby-matchit'
+Bundle 'vim-scripts/JavaScript-Indent'
 Bundle 'xuhdev/SingleCompile'
 Bundle 'xolox/vim-notes'
 " my plugin
