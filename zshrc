@@ -42,5 +42,5 @@ export PATH=/usr/local/bin:$PATH
 
 export PATH=$PATH:$HOME/bin
 
-# For nodejs's npm
-export PATH=$PATH:/usr/local/share/npm/bin
+# For nodejs's npm and nodejs
+export PATH=$PATH:/usr/local/share/npm/bin:/usr/local/bin/node
