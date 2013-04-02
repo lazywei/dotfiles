@@ -11,6 +11,7 @@ ZSH_THEME="robbyrussell"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias gdt="git difftool"
+alias vim="/usr/local/Cellar/macvim/7.3-66/MacVim.app/Contents/MacOS/Vim"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"

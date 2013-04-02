@@ -33,7 +33,7 @@ set nocompatible
 " We reset the vimrc augroup. Autocommands are added to this group throughout
 " the file
 augroup vimrc
-  autocmd!
+    autocmd!
 augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -77,7 +77,8 @@ Bundle 'xolox/vim-notes'
 " my plugin
 Bundle 'lazywei/vim-language-specific'
 Bundle 'lazywei/vim-doc-tw'
-Bundle 'lazywei/ultisnips'
+Bundle 'MarcWeber/ultisnips'
+" Bundle 'SirVer/ultisnips'
 " Need for vgod's color when use vim in terminal
 Bundle 'color'
 " less use
@@ -89,10 +90,10 @@ Bundle 'bufexplorer.zip'
 " Bundle 'Shougo/neocomplcache'
 " Bundle 'ervandew/supertab.git'
 " For snipmate
-" Bundle 'MarcWeber/vim-addon-mw-utils'
-" Bundle 'tomtom/tlib_vim'
-" Bundle 'honza/snipmate-snippets'
-" Bundle 'lazywei/vim-snipmate'
+"Bundle 'MarcWeber/vim-addon-mw-utils'
+"Bundle 'tomtom/tlib_vim'
+Bundle 'honza/snipmate-snippets'
+"Bundle 'garbas/vim-snipmate'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
@@ -135,6 +136,10 @@ set autoread
 
 " Fast saving
 nnoremap <leader>ww :w!<cr>
+
+" Fast jump to the end of line in insert mode
+inoremap <leader>A <esc>A
+
 
 " Fast editing of the .vimrc
 noremap <leader>rc :tabe! ~/.vimrc<cr>
@@ -604,12 +609,47 @@ nnoremap <F5> :GundoToggle<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => UltiSnips plugin
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" can't use <tab> as our snippet key since I use that with YCM
-let g:UltiSnipsExpandTrigger       = "<D-s>"
-let g:UltiSnipsListSnippets        = "<c-m-s>"
-let g:UltiSnipsJumpForwardTrigger  = "<D-s>"
-let g:UltiSnipsJumpBackwardTrigger = "<m-t>"
-let g:snips_author                 = 'LazyWei'
+" use <D-j> instead of <tab> as trigger key since I use <tab> for YCM
+let g:UltiSnips = {}
+let g:UltiSnips.InterfaceFlavour = "SnipMate"
+let g:UltiSnipsExpandTrigger       = "<D-j>"
+let g:UltiSnips.JumpForwardTrigger = "<D-j>"
+" Now its time to tell UltiSnips about which snippets to load.
+" You do so for snipmate snippets and UltiSnips snippets individually.
+" This example illustrates a setup loading snipmate snippets.
+
+" See plugin/UltiSnips.vim, it has much additional documentation.
+" Assuming you're not overrding default implemenation the default
+" VimL function SnippetFilesForCurrentExpansionDefaultImplementation
+
+
+" == UltiSnips snippets ==
+" Because I want to use the snippet snippets 'default' does not load
+" filetype.snippets snippet files. 'all' reperesents the snippets like box
+" which are meant to be present always. (snipmate was using _ for this)
+" For cpp, already all snippets have been converted to UltiSnips, so use
+" those - but only the one provided by my ~/.vim direcotry.
+let g:UltiSnips.UltiSnips_ft_filter = {
+            \ 'default' : {'filetypes': ['all'] },
+            \ 'all' : {'filetypes': ['all'] },
+            \ 'cpp' : {'filetypes': ['cpp'], 'dir-regex': '[._]vim/UltiSnips$' },
+            \ }
+" you may want to replace ['all'] by ['all','FILETYPE'] in order to load
+" all snippets - If you load all snipmate-snippets and UltiSnips snippets
+" you may also want to set always_use_first_snippet configuration option to 1 like this:
+let g:UltiSnips.always_use_first_snippet = 1
+
+" == snipmate snippets ==
+" For any other filetype do what I used in the past: snipmate-snippets
+" repo (must be added to runtimepath)
+" _ represents snipmate snippets which are present always
+let g:UltiSnips.snipmate_ft_filter = {
+            \ 'default' : {'filetypes': ["FILETYPE", "_"] },
+            \ 'html'    : {'filetypes': ["html", "javascript", "_"] },
+            \ 'cpp'    : {'filetypes': [] },
+            \ }
+
+" Please mind that 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => CtrlP plugin
