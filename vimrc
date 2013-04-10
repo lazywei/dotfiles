@@ -92,7 +92,7 @@ Bundle 'bufexplorer.zip'
 " For snipmate
 "Bundle 'MarcWeber/vim-addon-mw-utils'
 "Bundle 'tomtom/tlib_vim'
-Bundle 'honza/snipmate-snippets'
+Bundle 'honza/vim-snippets'
 "Bundle 'garbas/vim-snipmate'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
