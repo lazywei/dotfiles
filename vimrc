@@ -61,6 +61,7 @@ Bundle 'sjl/gundo.vim.git'
 Bundle 'tpope/vim-surround.git'
 Bundle 'tpope/vim-fugitive.git'
 Bundle 'tpope/vim-rails.git'
+Bundle 'terryma/vim-multiple-cursors'
 Bundle 'vim-scripts/YankRing.vim.git'
 Bundle 'vim-scripts/simplefold'
 Bundle 'vim-scripts/EasyGrep'
@@ -78,6 +79,7 @@ Bundle 'xolox/vim-notes'
 Bundle 'lazywei/vim-language-specific'
 Bundle 'lazywei/vim-doc-tw'
 Bundle 'MarcWeber/ultisnips'
+Bundle 'mattn/zencoding-vim'
 " Bundle 'SirVer/ultisnips'
 " Need for vgod's color when use vim in terminal
 Bundle 'color'
@@ -549,6 +551,8 @@ noremap <F2> :NERDTreeToggle<CR>
 " => Tagbar plugin
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <silent> <F9> :TagbarToggle<CR>
+let g:tagbar_width = 30
+let g:tagbar_indent = 1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -558,6 +562,10 @@ let g:yankring_history_dir = '$HOME/tmp/vim'
 "let g:yankring_clipboard_monitor = 1
 nnoremap <silent> <F11> :YRShow<CR>
 nnoremap <silent> <C-F11> :YRSearch 
+
+let g:yankring_replace_n_pkey = '<m-p>'
+let g:yankring_replace_n_nkey = '<m-n>'
+
 
 " this makes Y yank from the cursor to the end of the line, which makes more
 " sense than the default of yanking the whole current line (we can use yy for that)
@@ -611,7 +619,6 @@ nnoremap <F5> :GundoToggle<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " use <D-j> instead of <tab> as trigger key since I use <tab> for YCM
 let g:UltiSnips = {}
-let g:UltiSnips.InterfaceFlavour = "SnipMate"
 let g:UltiSnipsExpandTrigger       = "<D-j>"
 let g:UltiSnips.JumpForwardTrigger = "<D-j>"
 " Now its time to tell UltiSnips about which snippets to load.
@@ -656,3 +663,11 @@ let g:UltiSnips.snipmate_ft_filter = {
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <D-p> :CtrlP<cr>
 nnoremap <D-d> :CtrlP 
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Vim Multiple Cursors plugin
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:multi_cursor_next_key='<C-n>'
+let g:multi_cursor_prev_key='<C-p>'
+let g:multi_cursor_skip_key='<C-x>'
