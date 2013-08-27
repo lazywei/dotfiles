@@ -51,20 +51,27 @@ Bundle 'gmarik/vundle'
 "
 Bundle 'airblade/vim-gitgutter'
 Bundle 'bootleq/vim-tabline'
+Bundle 'editorconfig/editorconfig-vim'
 Bundle 'godlygeek/tabular'
 Bundle 'kien/ctrlp.vim'
+Bundle 'kchmck/vim-coffee-script'
+ " by default this syntax is used with all *_spec.rb
+Bundle 'Keithbsmiley/rspec.vim'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'othree/html5.vim.git'
 Bundle 'scrooloose/nerdtree.git'
 Bundle 'sjl/gundo.vim.git'
 Bundle 'tpope/vim-surround.git'
 Bundle 'tpope/vim-fugitive.git'
 Bundle 'tpope/vim-rails.git'
 Bundle 'terryma/vim-multiple-cursors'
+Bundle 'thoughtbot/vim-rspec'
 Bundle 'vim-scripts/YankRing.vim.git'
 Bundle 'vim-scripts/simplefold'
 Bundle 'vim-scripts/EasyGrep'
+Bundle 'vim-scripts/cocoa.vim'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'Valloric/MatchTagAlways'
 Bundle 'Valloric/vim-valloric-colorscheme'
@@ -74,7 +81,7 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'vim-scripts/ruby-matchit'
 Bundle 'vim-scripts/JavaScript-Indent'
 Bundle 'xuhdev/SingleCompile'
-Bundle 'xolox/vim-notes'
+" Bundle 'xolox/vim-notes'
 " my plugin
 Bundle 'lazywei/vim-language-specific'
 Bundle 'lazywei/vim-doc-tw'
@@ -86,7 +93,7 @@ Bundle 'color'
 " less use
 Bundle 'majutsushi/tagbar.git'
 Bundle 'bufexplorer.zip'
-" Bundle 'scrooloose/syntastic'
+Bundle 'scrooloose/syntastic'
 " Bundle 'php.vim-for-php5'
 " Bundle 'vim-latex-1.8.23'
 " Bundle 'Shougo/neocomplcache'
@@ -383,6 +390,33 @@ func! CurrentFileDir(cmd)
     return a:cmd . " " . expand("%:p:h") . "/"
 endfunc
 
+" Be able to use ':Shell' instead of ':!'
+" http://vim.wikia.com/wiki/Display_output_of_shell_commands_in_new_window
+command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
+function! s:RunShellCommand(cmdline)
+  let isfirst = 1
+  let words = []
+  for word in split(a:cmdline)
+    if isfirst
+      let isfirst = 0  " don't change first word (shell command)
+    else
+      if word[0] =~ '\v[%#<]'
+        let word = expand(word)
+      endif
+      let word = shellescape(word, 1)
+    endif
+    call add(words, word)
+  endfor
+  let expanded_cmdline = join(words)
+  botright new
+  setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap
+  call setline(1, 'You entered:  ' . a:cmdline)
+  call setline(2, 'Expanded to:  ' . expanded_cmdline)
+  call append(line('$'), substitute(getline(2), '.', '=', 'g'))
+  silent execute '$read !'. expanded_cmdline
+  1
+endfunction
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, tabs and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -566,6 +600,9 @@ nnoremap <silent> <C-F11> :YRSearch
 let g:yankring_replace_n_pkey = '<m-p>'
 let g:yankring_replace_n_nkey = '<m-n>'
 
+" map Yank map macro
+nnoremap <leader>2 :<C-U>YRMapsMacro<CR>
+
 
 " this makes Y yank from the cursor to the end of the line, which makes more
 " sense than the default of yanking the whole current line (we can use yy for that)
@@ -671,3 +708,11 @@ nnoremap <D-d> :CtrlP
 let g:multi_cursor_next_key='<C-n>'
 let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => vim-rspec plugin
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:rspec_command = ":Shell zeus rspec {spec}"
+noremap <leader>st :call RunCurrentSpecFile()<CR>
+noremap <leader>sn :call RunNearestSpec()<CR>
+noremap <leader>sa :call RunAllSpecs()<CR>
