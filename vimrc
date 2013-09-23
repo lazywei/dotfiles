@@ -55,6 +55,7 @@ Bundle 'editorconfig/editorconfig-vim'
 Bundle 'godlygeek/tabular'
 Bundle 'kien/ctrlp.vim'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'kshenoy/vim-signature'
  " by default this syntax is used with all *_spec.rb
 Bundle 'Keithbsmiley/rspec.vim'
 Bundle 'Lokaltog/vim-powerline'
@@ -86,7 +87,7 @@ Bundle 'xuhdev/SingleCompile'
 Bundle 'lazywei/vim-language-specific'
 Bundle 'lazywei/vim-doc-tw'
 Bundle 'MarcWeber/ultisnips'
-Bundle 'mattn/zencoding-vim'
+Bundle 'mattn/emmet-vim'
 " Bundle 'SirVer/ultisnips'
 " Need for vgod's color when use vim in terminal
 Bundle 'color'
@@ -122,6 +123,8 @@ nnoremap ; :
 nnoremap : ;
 vnoremap ; :
 vnoremap : ;
+
+inoremap jj <esc>
 
 " Set md to markdwon
 au BufRead,BufNewFile *.md set filetype=text
@@ -641,7 +644,7 @@ vnoremap <Leader>a= :Tabularize /=<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => SigleCompile plugin
+" => SingleCompile plugin
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <F3> :SCCompile<cr>
 nnoremap <F4> :SCCompileRun<cr>
@@ -713,6 +716,6 @@ let g:multi_cursor_skip_key='<C-x>'
 " => vim-rspec plugin
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:rspec_command = ":Shell zeus rspec {spec}"
-noremap <leader>st :call RunCurrentSpecFile()<CR>
+noremap <leader>sc :call RunCurrentSpecFile()<CR>
 noremap <leader>sn :call RunNearestSpec()<CR>
 noremap <leader>sa :call RunAllSpecs()<CR>
