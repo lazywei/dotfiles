@@ -7,7 +7,6 @@ set nocompatible
 "             lazywei AT github
 " Sections:
 "    -> General Settings
-"    -> Load plugins via Vundle
 "    -> VIM user interface
 "    -> More tweaks
 "    -> Custom mappings
@@ -42,6 +41,15 @@ nnoremap : ;
 vnoremap ; :
 vnoremap : ;
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Load plugins via vundle
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+if filereadable(expand("~/.vim/vundles.vim"))
+  source ~/.vim/vundles.vim
+endif
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Enable filetype plugin
 filetype plugin on
 filetype indent on
@@ -75,7 +83,7 @@ set nobackup                   " no backup~ files.
 set nowb
 set noswapfile
 set noshowmode                 " Don't show the mode ("-- INSERT --") at the bottom
-set nolazyredraw               " Don't redraw while executing macros 
+set nolazyredraw               " Don't redraw while executing macros
 set shiftround                 " makes indenting a multiple of shiftwidth
 set shiftwidth=2               " spaces for autoindents
 set smartcase                  " but become case sensitive if you type uppercase characters
@@ -101,33 +109,18 @@ func! MySys()
 endfun
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Load plugins via Vundle
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Needed for vundle, will be turned on after vundle inits
-filetype off
-
-" Setup vundle
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-Bundle 'gmarik/vundle'
-
-if filereadable(expand("~/.vim/vundles.vim"))
-  source ~/.vim/vundles.vim
-endif
-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme valloric
 syntax enable
-set scrolloff=7     " Set the distance to scroll when moving cursor 
+set scrolloff=8         "Start scrolling when we're 8 lines away from margins
+set sidescrolloff=15
+set sidescroll=1
 set ruler           " Always show current position
 set cmdheight=2     " The commandbar height
 set showmatch       " Show matching bracets when text indicator is over them
 set mat=2           " How many tenths of a second to blink
+set list listchars=tab:▸\ ,trail:·
 set nu
 
 if MySys() == "mac"
