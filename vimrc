@@ -9,12 +9,10 @@ set nocompatible
 "    -> General Settings
 "    -> VIM user interface
 "    -> More tweaks
-"    -> Custom mappings
-"        -> Inser mode
-"        -> Nomal mode
-"        -> Visual mode
-"        -> Command mode
 "
+"    (after vimrc loaded, see :h initialization )
+"    -> Custom mappings
+"        -> location: vim/plugin/settings/keymap.vim
 "    -> Plugins settings
 "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -40,7 +38,6 @@ nnoremap ; :
 nnoremap : ;
 vnoremap ; :
 vnoremap : ;
-
 
 "     => Vundle
 if filereadable(expand("~/.vim/vundles.vim"))
@@ -118,7 +115,6 @@ syntax enable
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
-set ruler           " Always show current position
 set cmdheight=2     " The commandbar height
 set showmatch       " Show matching bracets when text indicator is over them
 set mat=2           " How many tenths of a second to blink
@@ -167,22 +163,22 @@ augroup vimrc
 augroup END
 
 function! VisualSearch(direction) range
-    let l:saved_reg = @"
-    execute "normal! vgvy"
+  let l:saved_reg = @"
+  execute "normal! vgvy"
 
-    let l:pattern = escape(@", '\\/.*$^~[]')
-    let l:pattern = substitute(l:pattern, "\n$", "", "")
+  let l:pattern = escape(@", '\\/.*$^~[]')
+  let l:pattern = substitute(l:pattern, "\n$", "", "")
 
-    if a:direction == 'b'
-        execute "normal ?" . l:pattern . "^M"
-    elseif a:direction == 'gv'
-        execute "Ack " . l:pattern . ' %'
-    elseif a:direction == 'f'
-        execute "normal /" . l:pattern . "^M"
-    endif
+  if a:direction == 'b'
+    execute "normal ?" . l:pattern . "^M"
+  elseif a:direction == 'gv'
+    execute "Ack " . l:pattern . ' %'
+  elseif a:direction == 'f'
+    execute "normal /" . l:pattern . "^M"
+  endif
 
-    let @/ = l:pattern
-    let @" = l:saved_reg
+  let @/ = l:pattern
+  let @" = l:saved_reg
 endfunction
 
 "Basically you press * or # to search for the current selection
@@ -247,96 +243,6 @@ function! s:RunShellCommand(cmdline)
   silent execute '$read !'. expanded_cmdline
   1
 endfunction
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Custom mappings
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map 0 ^
-
-noremap <leader>ss :setlocal spell! spelllang=en_us<cr>
-nnoremap <leader>w :w!<cr>
-
-" Fast editing of the .vimrc
-noremap <leader>rc :tabe! ~/.vimrc<cr>
-noremap <silent> <leader>V :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
-
-" Map esc to cancel search highlight
-nnoremap <esc> :noh<return><esc>
-
-" Treat long lines as break lines (useful when moving around in them):
-map j gj
-map k gk
-
-" Map space to / (search) and c-space to ? (backgwards search)
-map <space> /\v
-
-" Smart way to move btw. windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
-
-" Indent
-nmap <tab> v>
-nmap <s-tab> v<
-
-" Use the arrows to something usefull
-noremap <right> :bn<cr>
-noremap <left> :bp<cr>
-
-" Tab configuration
-noremap <leader>tn :tabnew<cr>
-noremap <leader>te :tabedit
-noremap <leader>tc :tabclose<cr>
-noremap <leader>tm :tabmove
-
-" Close the current buffer
-noremap <leader>bd :Bclose<cr>
-command! Bclose call <SID>BufcloseCloseIt()
-function! <SID>BufcloseCloseIt()
-    let l:currentBufNum = bufnr("%")
-    let l:alternateBufNum = bufnr("#")
-
-    if buflisted(l:alternateBufNum)
-        buffer #
-    else
-        bnext
-    endif
-
-    if bufnr("%") == l:currentBufNum
-        new
-    endif
-
-    if buflisted(l:currentBufNum)
-        execute("bdelete! ".l:currentBufNum)
-    endif
-endfunction
-
-"     => Inser mode
-inoremap jj <esc>
-inoremap ,1 ()<esc>i
-inoremap ,2 []<esc>i
-inoremap ,3 {}<esc>i
-inoremap ,4 {<esc>o}<esc>O
-inoremap ,q ''<esc>i
-inoremap ,e ""<esc>i
-inoremap ,t <><esc>i
-
-" Fast jump to the end of line in insert mode
-inoremap <leader>A <esc>A
-
-"     => Visual mode
-vnoremap ,1 <esc>`>a)<esc>`<i(<esc>
-vnoremap ,2 <esc>`>a]<esc>`<i[<esc>
-vnoremap ,3 <esc>`>a}<esc>`<i{<esc>
-vnoremap ,4 <esc>`>a"<esc>`<i"<esc>
-vnoremap ,q <esc>`>a'<esc>`<i'<esc>
-
-vmap <tab> >gv
-vmap <s-tab> <gv
-
-"     => Command mode
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins settings

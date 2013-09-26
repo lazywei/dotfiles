@@ -7,3 +7,4 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 Bundle 'Valloric/vim-valloric-colorscheme'
+Bundle 'bling/vim-airline'
