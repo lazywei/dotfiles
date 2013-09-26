@@ -42,13 +42,10 @@ vnoremap ; :
 vnoremap : ;
 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Load plugins via vundle
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"     => Vundle
 if filereadable(expand("~/.vim/vundles.vim"))
   source ~/.vim/vundles.vim
 endif
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Enable filetype plugin
 filetype plugin on
@@ -103,6 +100,11 @@ set wildmode=longest,list,full
 set wildmenu                   " completion with menu
 set wrap                       " Wrap lines
 set whichwrap+=<,>,h,l,[,]
+
+" No sound on errors
+" turns off all error bells, visual or otherwise
+set noerrorbells visualbell t_vb=
+autocmd vimrc GUIEnter * set visualbell t_vb=
 
 func! MySys()
   return "mac"
@@ -219,12 +221,120 @@ if has("autocmd")
         \ endif
 endif
 
+" Be able to use ':Shell' instead of ':!'
+" http://vim.wikia.com/wiki/Display_output_of_shell_commands_in_new_window
+command! -complete=shellcmd -nargs=+ Shell call s:RunShellCommand(<q-args>)
+function! s:RunShellCommand(cmdline)
+  let isfirst = 1
+  let words = []
+  for word in split(a:cmdline)
+    if isfirst
+      let isfirst = 0  " don't change first word (shell command)
+    else
+      if word[0] =~ '\v[%#<]'
+        let word = expand(word)
+      endif
+      let word = shellescape(word, 1)
+    endif
+    call add(words, word)
+  endfor
+  let expanded_cmdline = join(words)
+  botright new
+  setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap
+  call setline(1, 'You entered:  ' . a:cmdline)
+  call setline(2, 'Expanded to:  ' . expanded_cmdline)
+  call append(line('$'), substitute(getline(2), '.', '=', 'g'))
+  silent execute '$read !'. expanded_cmdline
+  1
+endfunction
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Custom mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map 0 ^
+
+noremap <leader>ss :setlocal spell! spelllang=en_us<cr>
+nnoremap <leader>w :w!<cr>
+
+" Fast editing of the .vimrc
+noremap <leader>rc :tabe! ~/.vimrc<cr>
+noremap <silent> <leader>V :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+
+" Map esc to cancel search highlight
+nnoremap <esc> :noh<return><esc>
+
+" Treat long lines as break lines (useful when moving around in them):
+map j gj
+map k gk
+
+" Map space to / (search) and c-space to ? (backgwards search)
+map <space> /\v
+
+" Smart way to move btw. windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+" Indent
+nmap <tab> v>
+nmap <s-tab> v<
+
+" Use the arrows to something usefull
+noremap <right> :bn<cr>
+noremap <left> :bp<cr>
+
+" Tab configuration
+noremap <leader>tn :tabnew<cr>
+noremap <leader>te :tabedit
+noremap <leader>tc :tabclose<cr>
+noremap <leader>tm :tabmove
+
+" Close the current buffer
+noremap <leader>bd :Bclose<cr>
+command! Bclose call <SID>BufcloseCloseIt()
+function! <SID>BufcloseCloseIt()
+    let l:currentBufNum = bufnr("%")
+    let l:alternateBufNum = bufnr("#")
+
+    if buflisted(l:alternateBufNum)
+        buffer #
+    else
+        bnext
+    endif
+
+    if bufnr("%") == l:currentBufNum
+        new
+    endif
+
+    if buflisted(l:currentBufNum)
+        execute("bdelete! ".l:currentBufNum)
+    endif
+endfunction
+
 "     => Inser mode
-"     => Nomal mode
+inoremap jj <esc>
+inoremap ,1 ()<esc>i
+inoremap ,2 []<esc>i
+inoremap ,3 {}<esc>i
+inoremap ,4 {<esc>o}<esc>O
+inoremap ,q ''<esc>i
+inoremap ,e ""<esc>i
+inoremap ,t <><esc>i
+
+" Fast jump to the end of line in insert mode
+inoremap <leader>A <esc>A
+
 "     => Visual mode
+vnoremap ,1 <esc>`>a)<esc>`<i(<esc>
+vnoremap ,2 <esc>`>a]<esc>`<i[<esc>
+vnoremap ,3 <esc>`>a}<esc>`<i{<esc>
+vnoremap ,4 <esc>`>a"<esc>`<i"<esc>
+vnoremap ,q <esc>`>a'<esc>`<i'<esc>
+
+vmap <tab> >gv
+vmap <s-tab> <gv
+
 "     => Command mode
 
 
