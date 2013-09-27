@@ -10,9 +10,6 @@ nnoremap <leader>w :w!<cr>
 noremap <leader>v :tabe! ~/.vimrc<cr>
 noremap <silent> <leader>V :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
-" Map esc to cancel search highlight
-nnoremap <esc> :noh<return><esc>
-
 " Treat long lines as break lines (useful when moving around in them):
 map j gj
 map k gk
@@ -36,9 +33,9 @@ noremap <left> :bp<cr>
 
 " Tab configuration
 noremap <leader>tn :tabnew<cr>
-noremap <leader>te :tabedit
+noremap <leader>te :tabedit 
 noremap <leader>tc :tabclose<cr>
-noremap <leader>tm :tabmove
+noremap <leader>tm :tabmove 
 
 " Keep search matches in the middle of the window.
 " zz centers the screen on the cursor, zv unfolds any fold if the cursor

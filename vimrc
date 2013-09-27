@@ -156,12 +156,6 @@ if has("multi_byte")
   set fileencodings=ucs-bom,utf-8,latin1
 endif
 
-augroup vimrc
-  " Automatically delete trailing DOS-returns and whitespace on file open and
-  " write.
-  autocmd BufRead,BufWritePre,FileWritePre * silent! %s/[\r \t]\+$//
-augroup END
-
 function! VisualSearch(direction) range
   let l:saved_reg = @"
   execute "normal! vgvy"
