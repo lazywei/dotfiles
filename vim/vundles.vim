@@ -53,6 +53,7 @@ Bundle "Valloric/MatchTagAlways"
 " YCM need extra binaries, see doc.
 Bundle "Valloric/YouCompleteMe"
 Bundle "vim-scripts/matchit.zip"
+Bundle "vim-scripts/netrw"
 Bundle "michaeljsmith/vim-indent-object"
 Bundle "mileszs/ack.vim"
 
