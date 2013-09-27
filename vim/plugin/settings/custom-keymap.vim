@@ -2,6 +2,7 @@
 " => Custom mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map 0 ^
+noremap ,. :noh<cr>
 
 noremap <leader>ss :setlocal spell! spelllang=en_us<cr>
 nnoremap <leader>w :w!<cr>
