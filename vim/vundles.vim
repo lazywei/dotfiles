@@ -40,20 +40,19 @@ Bundle "honza/vim-snippets"
 
 " General improvements...
 Bundle "editorconfig/editorconfig-vim"
-Bundle "vim-scripts/YankRing.vim"
 Bundle "godlygeek/tabular"
 Bundle "kien/ctrlp.vim"
 Bundle "Lokaltog/vim-easymotion"
+Bundle "lazywei/YankRing.vim"
 Bundle "scrooloose/nerdtree"
 Bundle "scrooloose/syntastic"
 Bundle "tpope/vim-surround"
 Bundle "terryma/vim-multiple-cursors"
-Bundle "vim-scripts/YankRing.vim"
 Bundle "Valloric/MatchTagAlways"
 " YCM need extra binaries, see doc.
 Bundle "Valloric/YouCompleteMe"
 Bundle "vim-scripts/matchit.zip"
-Bundle "vim-scripts/netrw"
+Bundle "vim-scripts/netrw.vim"
 Bundle "michaeljsmith/vim-indent-object"
 Bundle "mileszs/ack.vim"
 

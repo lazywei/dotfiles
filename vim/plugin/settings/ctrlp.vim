@@ -1,2 +1,2 @@
-nnoremap <leader>t :CtrlP<CR>
-nnoremap <leader>T :CtrlPClearCache<CR>:CtrlP<CR>
+nnoremap <leader>cp :CtrlP<CR>
+nnoremap <D-p> :CtrlP<CR>
