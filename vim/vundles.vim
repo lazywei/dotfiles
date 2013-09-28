@@ -12,6 +12,7 @@ Bundle "gmarik/vundle"
 Bundle "Keithbsmiley/rspec.vim"
 Bundle "thoughtbot/vim-rspec"
 Bundle "vim-ruby/vim-ruby"
+Bundle "ck3g/vim-change-hash-syntax"
 
 " Javascript...
 Bundle "pangloss/vim-javascript"
@@ -23,7 +24,7 @@ Bundle "vim-scripts/JavaScript-Indent"
 Bundle "mattn/emmet-vim"
 Bundle "helino/vim-json"
 Bundle "othree/html5.vim"
-Bundle "skammer/vim-css-color"
+Bundle "ap/vim-css-color"
 Bundle "tpope/vim-markdown"
 Bundle "tpope/vim-repeat"
 
@@ -31,6 +32,8 @@ Bundle "tpope/vim-repeat"
 
 " Git related...
 Bundle "tpope/vim-fugitive"
+Bundle "airblade/vim-gitgutter"
+Bundle "gregsexton/gitv"
 
 " SnipMate...
 Bundle "MarcWeber/vim-addon-mw-utils"
@@ -47,18 +50,35 @@ Bundle "lazywei/YankRing.vim"
 Bundle "scrooloose/nerdtree"
 Bundle "scrooloose/syntastic"
 Bundle "tpope/vim-surround"
+Bundle "tpope/vim-abolish"
+Bundle "tpope/vim-endwise"
+" Read doc for how to use
+Bundle "tpope/vim-ragtag"
+Bundle "tpope/vim-repeat"
+Bundle "tpope/vim-unimpaired"
 Bundle "terryma/vim-multiple-cursors"
 Bundle "Valloric/MatchTagAlways"
 " YCM need extra binaries, see doc.
 Bundle "Valloric/YouCompleteMe"
 Bundle "vim-scripts/matchit.zip"
 Bundle "vim-scripts/netrw.vim"
-Bundle "michaeljsmith/vim-indent-object"
 Bundle "mileszs/ack.vim"
+Bundle "briandoll/change-inside-surroundings.vim"
+Bundle "nelstrom/vim-visual-star-search"
+Bundle "nathanaelkane/vim-indent-guides"
+
+" Text objects...
+Bundle "michaeljsmith/vim-indent-object"
+Bundle "kana/vim-textobj-user"
+Bundle "coderifous/textobj-word-column.vim"
+Bundle "lucapette/vim-textobj-underscore"
+Bundle "nelstrom/vim-textobj-rubyblock"
+Bundle "bootleq/vim-textobj-rubysymbol"
 
 " Cosmetics, color scheme, Powerline...
 Bundle "Valloric/vim-valloric-colorscheme"
 Bundle "bling/vim-airline"
+Bundle "vim-scripts/TagHighlight"
 
 " My plugins...
 Bundle "lazywei/vim-language-specific"
