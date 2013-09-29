@@ -35,7 +35,6 @@ noremap <left> :bp<cr>
 " Tab configuration
 noremap <leader>tn :tabnew<cr>
 noremap <leader>te :tabedit 
-noremap <leader>tc :tabclose<cr>
 noremap <leader>tm :tabmove 
 
 " Keep search matches in the middle of the window.
@@ -93,8 +92,8 @@ inoremap <leader>A <esc>A
 vnoremap ,1 <esc>`>a)<esc>`<i(<esc>
 vnoremap ,2 <esc>`>a]<esc>`<i[<esc>
 vnoremap ,3 <esc>`>a}<esc>`<i{<esc>
-vnoremap ,4 <esc>`>a"<esc>`<i"<esc>
 vnoremap ,q <esc>`>a'<esc>`<i'<esc>
+vnoremap ,e <esc>`>a"<esc>`<i"<esc>
 
 vmap <tab> >gv
 vmap <s-tab> <gv
