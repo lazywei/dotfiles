@@ -78,3 +78,10 @@ Key Mapping
 * `<leader>rc` run rspec on current spec
 * `<leader>rn` run rspec on current block
 * `<leader>ra` run rspec on all test
+
+#### vim-gist
+
+* `:Gist` post current buffer to gist, use default privacy option (normal / visual mode)
+* `:Gist -p` private gist
+* `:Gist -P` public gist
+* `:Gist -a` anonymously gist
