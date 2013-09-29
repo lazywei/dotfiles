@@ -63,11 +63,12 @@ Bundle "Valloric/YouCompleteMe"
 Bundle "vim-scripts/matchit.zip"
 Bundle "vim-scripts/netrw.vim"
 Bundle "mileszs/ack.vim"
-Bundle "briandoll/change-inside-surroundings.vim"
 Bundle "nelstrom/vim-visual-star-search"
 Bundle "nathanaelkane/vim-indent-guides"
+Bundle 'xuhdev/SingleCompile'
 
 " Text objects...
+Bundle "briandoll/change-inside-surroundings.vim"
 Bundle "michaeljsmith/vim-indent-object"
 Bundle "kana/vim-textobj-user"
 Bundle "coderifous/textobj-word-column.vim"
