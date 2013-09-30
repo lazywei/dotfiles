@@ -40,6 +40,27 @@ Key Mapping
 * `<leader><space>` delete trailing space
 * `Q` close window or kill buffer
 
+### Text Object
+
+* change-inside-surroundings.vim
+  * `<leader>ci` remove contents of `{}`, `()`, `""`, `><`, `[]`, `''`, `\`\``, leaving you in insert mode
+  * `<leader>cas` same as above, but remove surroundings
+* vim-indent-object
+  * `ai` (A)n (I)ndentation level and line above.
+  * `ii` (I)nner (I)ndentation level (no line above).
+  * `aI` (A)n (I)ndentation level and lines above/below.
+  * `iI` (I)nner (I)ndentation level (no lines above/below).
+* textobj-word-column.vim
+  * `ic`, `ac`, `iC`, `aC` use them like `cic` `vac`
+* vim-textobj-underscore
+  * `a_`, `i_`
+* vim-textobj-rubyblock
+  * `ar`, `ir`
+* vim-textobj-rubysymbol
+  * `a:`, `i:`
+
+============
+
 ### Plug-ins
 
 #### NERDTree
@@ -85,3 +106,4 @@ Key Mapping
 * `:Gist -p` private gist
 * `:Gist -P` public gist
 * `:Gist -a` anonymously gist
+
