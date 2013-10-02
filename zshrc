@@ -50,3 +50,6 @@ export PATH=$PATH:/usr/local/share/npm/bin:/usr/local/bin/node
 
 # For pip
 export PATH=$PATH:/usr/local/share/python
+
+# For Haskell's cabal
+export PATH=$PATH:$HOME/.cabal/bin

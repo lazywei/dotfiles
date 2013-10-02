@@ -28,6 +28,9 @@ Bundle 'othree/html5.vim'
 Bundle 'tpope/vim-markdown'
 Bundle 'tpope/vim-repeat'
 
+" Haskell...
+Bundle 'bitc/vim-hdevtools'
+
 " Other languages...
 
 " Git related...
@@ -44,6 +47,7 @@ Bundle 'tomtom/tlib_vim'
 
 " General improvements...
 Bundle 'editorconfig/editorconfig-vim'
+Bundle 'techlivezheng/vim-plugin-minibufexpl'
 Bundle 'godlygeek/tabular'
 Bundle 'kien/ctrlp.vim'
 Bundle 'lazywei/YankRing.vim'
