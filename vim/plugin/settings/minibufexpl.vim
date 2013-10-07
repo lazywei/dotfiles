@@ -1,3 +1,5 @@
-noremap <S-h> :MBEbp<CR>
-noremap <S-l> :MBEbn<CR>
-noremap <leader> :MBEToggle<CR>
+noremap <S-h> :MBEbf<CR>
+noremap <S-l> :MBEbb<CR>
+noremap <leader>mbt :MBEToggle<CR>
+let g:miniBufExplSortBy="mru"
+let g:miniBufExplCycleArround=1

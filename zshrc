@@ -35,6 +35,8 @@ plugins=(bundler git encode64 gem rails3 vi-mode cap extract zeus)
 
 export ZSH_HIGHLIGHT_HIGHLIGHTERS="(mail brackets pattern cursor root)"
 
+export EDITOR=/usr/local/bin/vim
+
 source $ZSH/oh-my-zsh.sh
 
 # Setting Path
