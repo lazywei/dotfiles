@@ -55,3 +55,7 @@ export PATH=$PATH:/usr/local/share/python
 
 # For Haskell's cabal
 export PATH=$PATH:$HOME/.cabal/bin
+
+# For golang
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin

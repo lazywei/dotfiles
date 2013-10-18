@@ -31,6 +31,13 @@ Bundle 'tpope/vim-repeat'
 " Haskell...
 Bundle 'bitc/vim-hdevtools'
 
+" Go...
+Bundle 'jnwhiteh/vim-golang'
+" gocode and godef need extra installation, see github.
+Bundle 'Blackrush/vim-gocode'
+Bundle 'dgryski/vim-godef'
+"Bundle 'fsouza/go.vim'
+
 " Other languages...
 
 " Git related...
