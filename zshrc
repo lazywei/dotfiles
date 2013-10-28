@@ -31,7 +31,7 @@ alias gdt="git difftool -y"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(bundler git encode64 gem rails3 vi-mode cap extract zeus)
+plugins=(bundler git encode64 gem rails3 cap extract zeus)
 
 export ZSH_HIGHLIGHT_HIGHLIGHTERS="(mail brackets pattern cursor root)"
 
@@ -47,11 +47,11 @@ export PATH=/usr/local/bin:$PATH
 
 export PATH=$PATH:$HOME/bin
 
+# For pip
+export PATH=$PATH:$(brew --prefix)/share/python
+
 # For nodejs's npm and nodejs
 export PATH=$PATH:/usr/local/share/npm/bin:/usr/local/bin/node
-
-# For pip
-export PATH=$PATH:/usr/local/share/python
 
 # For Haskell's cabal
 export PATH=$PATH:$HOME/.cabal/bin
