@@ -38,6 +38,9 @@ Bundle 'Blackrush/vim-gocode'
 Bundle 'dgryski/vim-godef'
 "Bundle 'fsouza/go.vim'
 
+" Latex
+Bundle 'gerw/vim-latex-suite'
+
 " Other languages...
 
 " Git related...
@@ -52,10 +55,16 @@ Bundle 'honza/vim-snippets'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'tomtom/tlib_vim'
 
+" Unite...
+" vimproc need manually build
+Bundle 'Shougo/vimproc.vim'
+Bundle 'Shougo/unite.vim'
+
 " General improvements...
 Bundle 'editorconfig/editorconfig-vim'
 Bundle 'techlivezheng/vim-plugin-minibufexpl'
 Bundle 'godlygeek/tabular'
+Bundle 'justinmk/vim-sneak'
 Bundle 'kien/ctrlp.vim'
 Bundle 'lazywei/YankRing.vim'
 Bundle 'Lokaltog/vim-easymotion'

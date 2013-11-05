@@ -107,3 +107,7 @@ Key Mapping
 * `:Gist -P` public gist
 * `:Gist -a` anonymously gist
 
+#### vim-sneak
+
+* `s{char}{char}` e.g. `sab` jump to the word `abxxx`
+* `\` for jumping to next target
