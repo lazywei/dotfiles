@@ -47,7 +47,9 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 
 " Close the current buffer
-noremap <leader>bd :Bclose<cr>
+
+nnoremap <Leader>K <C-w>c
+nnoremap <silent><Leader>k :Bclose<CR>
 command! Bclose call <SID>BufcloseCloseIt()
 function! <SID>BufcloseCloseIt()
   let l:currentBufNum = bufnr("%")
