@@ -73,9 +73,7 @@ set linebreak
 set incsearch                  " Make search act like search in modern browsers
 set magic                      " change the way backslashes are used in search patterns
 set mouse=a                    " enables the mouse in all modes
-set nobackup                   " no backup~ files.
 set nowb
-set noswapfile
 set noshowmode                 " Don't show the mode ("-- INSERT --") at the bottom
 set nolazyredraw               " Don't redraw while executing macros
 set shiftround                 " makes indenting a multiple of shiftwidth
@@ -86,9 +84,6 @@ set softtabstop=2
 set switchbuf=useopen,usetab
 set tabstop=2                  " number of spaces a tab counts for
 set timeoutlen=500             " Timeout for mapping
-set undolevels=1000            " use many levels of undo
-set viminfo='20,\"500          " remember copy registers after quitting in the .viminfo
-" file -- 20 jump links, regs up to 500 lines'
 
 " When you type the first tab, it will complete as much as possible, the second
 " tab hit will provide a list, the third and subsequent tabs will cycle through
@@ -163,18 +158,6 @@ autocmd vimrc FileType gitcommit setlocal spell! spelllang=en_us
 
 try
   lang zh_TW
-catch
-endtry
-
-" Persistent undo
-try
-  if MySys() == "windows"
-    set undodir=C:\Windows\Temp
-  else
-    set undodir=~/.vim/undodir
-  endif
-
-  set undofile
 catch
 endtry
 
