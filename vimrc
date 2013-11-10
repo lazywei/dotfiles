@@ -123,7 +123,7 @@ set nu
 
 if MySys() == "mac"
   set gfn=Menlo:h16
-  set shell=/bin/zsh
+  set shell=/usr/local/bin/zsh
 elseif MySys() == "windows"
   set gfn=Bitstream\ Vera\ Sans\ Mono:h10
 elseif MySys() == "linux"

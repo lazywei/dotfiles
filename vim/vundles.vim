@@ -59,6 +59,20 @@ Bundle 'tomtom/tlib_vim'
 " vimproc need manually build
 Bundle 'Shougo/vimproc.vim'
 Bundle 'Shougo/unite.vim'
+Bundle 'Shougo/unite-outline'
+Bundle 'tsukkee/unite-help'
+Bundle 'ujihisa/unite-locate'
+Bundle 'thinca/vim-unite-history'
+Bundle 'osyo-manga/unite-filetype'
+Bundle 'osyo-manga/unite-quickfix'
+Bundle 'osyo-manga/unite-fold'
+Bundle 'tacroe/unite-mark'
+
+" File explorer (needed where ranger is not available)
+Bundle 'Shougo/vimfiler'
+
+" Junk files
+Bundle 'Shougo/junkfile.vim'
 
 " General improvements...
 Bundle 'editorconfig/editorconfig-vim'

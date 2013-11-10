@@ -1,6 +1,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Custom mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let maplocalleader= ' '
 map 0 ^
 noremap ,. :noh<cr>
 
@@ -16,7 +17,7 @@ map j gj
 map k gk
 
 " Map space to / (search) and c-space to ? (backgwards search)
-map <space> /\v
+" map <space> /\v
 
 " Smart way to move btw. windows
 map <C-j> <C-W>j
