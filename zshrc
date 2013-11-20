@@ -63,6 +63,4 @@ export PATH=$PATH:$GOPATH/bin
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
+export DISABLE_AUTO_TITLE=true

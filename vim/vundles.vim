@@ -67,12 +67,13 @@ Bundle 'osyo-manga/unite-filetype'
 Bundle 'osyo-manga/unite-quickfix'
 Bundle 'osyo-manga/unite-fold'
 Bundle 'tacroe/unite-mark'
-
 " File explorer (needed where ranger is not available)
 Bundle 'Shougo/vimfiler'
-
 " Junk files
 Bundle 'Shougo/junkfile.vim'
+
+" Tmux...
+Bundle 'benmills/vimux'
 
 " General improvements...
 Bundle 'editorconfig/editorconfig-vim'

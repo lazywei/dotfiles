@@ -110,7 +110,7 @@ syntax enable
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
-set cmdheight=2     " The commandbar height
+set cmdheight=1     " The commandbar height
 set showmatch       " Show matching bracets when text indicator is over them
 set mat=2           " How many tenths of a second to blink
 set list listchars=tab:\ \ ,trail:·
