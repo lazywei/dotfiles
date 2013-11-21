@@ -74,6 +74,7 @@ Bundle 'Shougo/junkfile.vim'
 
 " Tmux...
 Bundle 'benmills/vimux'
+Bundle 'jingweno/vimux-zeus'
 
 " General improvements...
 Bundle 'editorconfig/editorconfig-vim'
