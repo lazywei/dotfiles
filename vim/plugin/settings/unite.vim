@@ -24,7 +24,7 @@ nnoremap <silent><Leader>f :Unite -silent -no-split -start-insert -auto-preview
 nnoremap <silent>[menu]8 :UniteWithCursorWord -silent -no-split -auto-preview
       \ line<CR>
 " yankring
-nnoremap <silent><Leader>i :Unite -silent history/yank<CR>
+nnoremap <silent><Leader>i :Unite -silent register history/yank<CR>
 " grep
 nnoremap <silent><Leader>a :Unite -silent -no-quit grep<CR>
 " help
