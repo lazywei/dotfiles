@@ -38,6 +38,20 @@ nnoremap <silent><Leader>t :Unite -silent -vertical -winwidth=40
 " junk files
 nnoremap <silent><Leader>j :Unite -silent junkfile/new junkfile<CR>
 
+" Spelling {{{
+
+" turn on the spell checking and set the English language
+noremap <leader>ss :setlocal spell! spelllang=en_us<cr>
+" jump to the next bad spell word
+noremap <Leader>sn ]s
+" suggest words
+noremap <Leader>sp z=
+" jump to the next bad spell word and suggests a correct one
+noremap <Leader>sc ]sz=
+" add word to the dictionary
+noremap <Leader>sa zg
+" }}}
+
 " menus {{{
 let g:unite_source_menu_menus = {}
 
