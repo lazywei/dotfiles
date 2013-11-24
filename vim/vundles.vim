@@ -42,6 +42,7 @@ Bundle 'dgryski/vim-godef'
 Bundle 'gerw/vim-latex-suite'
 
 " Other languages...
+Bundle 'lazywei/vim-matlab'
 
 " Git related...
 Bundle 'airblade/vim-gitgutter'
