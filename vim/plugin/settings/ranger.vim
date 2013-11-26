@@ -9,7 +9,7 @@ fun! RangerChooser()
     endif
     redraw!
 endfun
-map <Leader>x :call RangerChooser()<CR>
+nnoremap <Leader>x :call RangerChooser()<CR>
 " }}}
 
 
