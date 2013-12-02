@@ -31,7 +31,7 @@ alias gdt="git difftool -y"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(bundler git encode64 gem rails3 cap extract zeus tmux tmuxinator)
+plugins=(git encode64 gem rails4 cap extract zeus tmux tmuxinator)
 
 export ZSH_HIGHLIGHT_HIGHLIGHTERS="(mail brackets pattern cursor root)"
 
@@ -41,8 +41,10 @@ source $ZSH/oh-my-zsh.sh
 
 # Setting Path
 # export PATH=/home/kusoayan/.rvm/gems/ruby-1.9.3-p194/bin:/home/kusoayan/.rvm/gems/ruby-1.9.3-p194@global/bin:/home/kusoayan/.rvm/rubies/ruby-1.9.3-p194/bin:/home/kusoayan/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/vendor_perl:/usr/bin/core_perl:/opt/qt/bin:/home/kusoayan/.gem/ruby/1.9.1/bin:/home/kusoayan/.rvm/bin
-
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+export PATH=/Users/lazywei/.rbenv/shims:/Users/lazywei/.rbenv/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/go/bin:/usr/texbin
+
 export PATH=/usr/local/bin:$PATH
 
 export PATH=$PATH:$HOME/bin
