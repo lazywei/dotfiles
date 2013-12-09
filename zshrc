@@ -31,7 +31,7 @@ alias gdt="git difftool -y"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git encode64 gem rails4 cap extract zeus tmux tmuxinator)
+plugins=(git encode64 gem rails cap extract zeus tmux tmuxinator)
 
 export ZSH_HIGHLIGHT_HIGHLIGHTERS="(mail brackets pattern cursor root)"
 

@@ -21,5 +21,8 @@ root: ~/Projects/ct
 windows:
   - editor: vim
   - guard: bundle exec guard
-  - server: bundle exec rails s
-  - logs: tail -f log/development.log
+  - zeus:
+      layout: even-vertical
+      panes:
+        - zeus start
+        - zeus server
