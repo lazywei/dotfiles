@@ -31,7 +31,7 @@ alias gdt="git difftool -y"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git encode64 gem rails cap extract zeus tmux tmuxinator)
+plugins=(git encode64 gem rails cap extract zeus tmux tmuxinator vi-mode)
 
 export ZSH_HIGHLIGHT_HIGHLIGHTERS="(mail brackets pattern cursor root)"
 
@@ -65,4 +65,9 @@ export PATH=$PATH:$GOPATH/bin
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+# added by Anaconda 1.8.0 installer
+# export PATH="/Users/lazywei/anaconda/bin:$PATH"
+
 export DISABLE_AUTO_TITLE=true
+
+export PATH="$PATH:$HOME/railsbricks"
