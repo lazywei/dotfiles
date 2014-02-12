@@ -34,8 +34,8 @@ noremap <left> :bp<cr>
 
 " Tab configuration
 noremap <leader>tn :tabnew<cr>
-noremap <leader>te :tabedit 
-noremap <leader>tm :tabmove 
+noremap <leader>te :tabedit<space>
+noremap <leader>tm :tabmove<space>
 
 " Keep search matches in the middle of the window.
 " zz centers the screen on the cursor, zv unfolds any fold if the cursor

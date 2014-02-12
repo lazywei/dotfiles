@@ -10,23 +10,12 @@ function! s:unite_my_settings()
   imap <silent><buffer><expr> <C-v> unite#do_action('vsplit')
 endfunction
 
-" files
-nnoremap <silent><Leader>o :Unite -silent -start-insert file<CR>
-nnoremap <silent><Leader>O :Unite -silent -start-insert file_rec/async<CR>
-nnoremap <silent><Leader>m :Unite -silent file_mru<CR>
 " buffers
 nnoremap <silent><Leader>b :Unite -silent buffer<CR>
 " tabs
 nnoremap <silent><Leader>B :Unite -silent tab<CR>
-" buffer search
-nnoremap <silent><Leader>f :Unite -silent -no-split -start-insert -auto-preview
-      \ line<CR>
-nnoremap <silent>[menu]8 :UniteWithCursorWord -silent -no-split -auto-preview
-      \ line<CR>
 " yankring
 nnoremap <silent><Leader>i :Unite -silent register history/yank<CR>
-" grep
-nnoremap <silent><Leader>a :Unite -silent -no-quit grep<CR>
 " help
 nnoremap <silent> g<C-h> :UniteWithCursorWord -silent help<CR>
 " tasks

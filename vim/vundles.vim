@@ -74,7 +74,7 @@ Bundle 'Shougo/junkfile.vim'
 
 " Tmux...
 Bundle 'benmills/vimux'
-Bundle 'jingweno/vimux-zeus'
+"Bundle 'jingweno/vimux-zeus'
 
 " General improvements...
 Bundle 'editorconfig/editorconfig-vim'
@@ -86,10 +86,11 @@ Bundle 'kana/vim-smartinput'
 Bundle 'lazywei/YankRing.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'mattn/webapi-vim'
-Bundle 'mileszs/ack.vim'
+"Bundle 'mileszs/ack.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'Rykka/colorv.vim'
+Bundle 'rking/ag.vim'
 "Bundle 'Raimondi/delimitMate'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
