@@ -59,8 +59,8 @@ export PATH=$PATH:/usr/local/share/npm/bin:/usr/local/bin/node
 export PATH=$PATH:$HOME/.cabal/bin
 
 # For golang
-export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
+# export GOPATH=$HOME/go
+# export PATH=$PATH:$GOPATH/bin
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -71,3 +71,8 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export DISABLE_AUTO_TITLE=true
 
 export PATH="$PATH:$HOME/railsbricks"
+
+# For Go binary tools
+export PATH=/Users/lazywei/GoProjects/tools/bin:$PATH
+
+eval "$(direnv hook zsh)"

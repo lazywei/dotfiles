@@ -106,7 +106,7 @@ Bundle 'Valloric/MatchTagAlways'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'vim-scripts/matchit.zip'
 "Bundle 'vim-scripts/netrw.vim'
-Bundle 'xuhdev/SingleCompile'
+"Bundle 'xuhdev/SingleCompile'
 
 " Text objects...
 Bundle 'bootleq/vim-textobj-rubysymbol'
