@@ -8,7 +8,7 @@ noremap ,. :noh<cr>
 nnoremap <leader>w :w!<cr>
 
 " Fast editing of the .vimrc
-noremap <leader>v :tabe! ~/.vimrc<cr>
+noremap <leader>v :e ~/.vimrc<CR>
 noremap <silent> <leader>V :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 
 " Treat long lines as break lines (useful when moving around in them):
@@ -16,7 +16,7 @@ map j gj
 map k gk
 
 " Map space to / (search) and c-space to ? (backgwards search)
-" map <space> /\v
+map <space> /\v
 
 " Smart way to move btw. windows
 map <C-j> <C-W>j
@@ -33,9 +33,10 @@ noremap <right> :bn<cr>
 noremap <left> :bp<cr>
 
 " Tab configuration
-noremap <leader>tn :tabnew<cr>
+noremap <leader>tn :tabnew<CR>
 noremap <leader>te :tabedit<space>
 noremap <leader>tm :tabmove<space>
+noremap <leader>e :edit<space>
 
 " Keep search matches in the middle of the window.
 " zz centers the screen on the cursor, zv unfolds any fold if the cursor
@@ -44,6 +45,19 @@ nnoremap * *zzzv
 nnoremap # #zzzv
 nnoremap n nzzzv
 nnoremap N Nzzzv
+
+" Spelling {{{
+" turn on the spell checking and set the English language
+noremap <leader>ss :setlocal spell! spelllang=en_us<cr>
+" jump to the next bad spell word
+noremap <Leader>sn ]s
+" suggest words
+noremap <Leader>sp z=
+" jump to the next bad spell word and suggests a correct one
+noremap <Leader>sc ]sz=
+" add word to the dictionary
+noremap <Leader>sa zg
+" }}}
 
 " Close the current buffer
 

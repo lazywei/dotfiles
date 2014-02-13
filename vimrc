@@ -39,7 +39,7 @@ nnoremap : ;
 vnoremap ; :
 vnoremap : ;
 
-"     => Vundle
+" Vundle
 if filereadable(expand("~/.vim/vundles.vim"))
   source ~/.vim/vundles.vim
 endif
@@ -161,24 +161,13 @@ try
 catch
 endtry
 
-" Auto go to the location last time edit when open files.
+" Go back to the location last time edited when open files.
 if has("autocmd")
   autocmd BufRead *.txt set tw=78
   autocmd BufReadPost *
         \ if line("'\"") > 0 && line ("'\"") <= line("$") |
         \   exe "normal g'\"" |
         \ endif
-endif
-
-" Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
-if executable('ag')
-  let g:ackprg = 'ag --nogroup --column'
-
-  " Use Ag over Grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -U -l --nocolor -g ""'
 endif
 
 " Use system clipboard

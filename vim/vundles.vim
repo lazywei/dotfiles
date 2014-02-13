@@ -31,11 +31,11 @@ Bundle 'tpope/vim-repeat'
 Bundle 'bitc/vim-hdevtools'
 
 " Go...
-Bundle 'jnwhiteh/vim-golang'
+" Bundle 'jnwhiteh/vim-golang'
 " gocode and godef need extra installation, see github.
 Bundle 'Blackrush/vim-gocode'
 Bundle 'dgryski/vim-godef'
-"Bundle 'fsouza/go.vim'
+" Bundle 'fsouza/go.vim'
 
 " Latex
 Bundle 'gerw/vim-latex-suite'
@@ -70,11 +70,11 @@ Bundle 'tacroe/unite-mark'
 " File explorer (needed where ranger is not available)
 " Bundle 'Shougo/vimfiler'
 " Junk files
-Bundle 'Shougo/junkfile.vim'
+" Bundle 'Shougo/junkfile.vim'
 
 " Tmux...
 Bundle 'benmills/vimux'
-"Bundle 'jingweno/vimux-zeus'
+Bundle 'jingweno/vimux-zeus'
 
 " General improvements...
 Bundle 'editorconfig/editorconfig-vim'
@@ -86,12 +86,12 @@ Bundle 'kana/vim-smartinput'
 Bundle 'lazywei/YankRing.vim'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'mattn/webapi-vim'
-"Bundle 'mileszs/ack.vim'
+" Bundle 'mileszs/ack.vim'
 Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'nelstrom/vim-visual-star-search'
 Bundle 'Rykka/colorv.vim'
 Bundle 'rking/ag.vim'
-"Bundle 'Raimondi/delimitMate'
+" Bundle 'Raimondi/delimitMate'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'terryma/vim-multiple-cursors'
@@ -101,13 +101,14 @@ Bundle 'tpope/vim-ragtag'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
-"Bundle 'tpope/vim-vinegar'
+Bundle 'tpope/vim-commentary'
+" Bundle 'tpope/vim-vinegar'
 Bundle 'Valloric/MatchTagAlways'
 " YCM need extra binaries, see doc.
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'vim-scripts/matchit.zip'
-"Bundle 'vim-scripts/netrw.vim'
-"Bundle 'xuhdev/SingleCompile'
+" Bundle 'vim-scripts/netrw.vim'
+Bundle 'xuhdev/SingleCompile'
 
 " Text objects...
 Bundle 'bootleq/vim-textobj-rubysymbol'
