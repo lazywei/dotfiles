@@ -102,6 +102,7 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-commentary'
+Bundle 'tacahiroy/ctrlp-funky'
 " Bundle 'tpope/vim-vinegar'
 Bundle 'Valloric/MatchTagAlways'
 " YCM need extra binaries, see doc.

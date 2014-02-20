@@ -1,1 +1,1 @@
-let g:gofmt_command = "goimports"
+let g:gofmt_command = 'goimports'
