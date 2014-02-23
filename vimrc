@@ -153,6 +153,11 @@ autocmd vimrc FileType markdown setlocal spell! spelllang=en_us
 autocmd vimrc FileType gitcommit setlocal spell! spelllang=en_us
 
 autocmd vimrc Filetype ruby setlocal ts=2 sw=2 expandtab
+autocmd vimrc Filetype eruby setlocal ts=2 sw=2 expandtab
+autocmd vimrc Filetype html setlocal ts=2 sw=2 expandtab
+autocmd vimrc Filetype javascript setlocal ts=2 sw=2 expandtab
+autocmd vimrc Filetype coffee setlocal ts=2 sw=2 expandtab
+autocmd vimrc Filetype r setlocal ts=2 sw=2 expandtab commentstring=#\ %s
 
 try
   lang zh_TW
