@@ -61,6 +61,7 @@ set completeopt=menu,menuone,longest
 
 set copyindent                 " copy the previous indentation on autoindenting
 set encoding=utf8
+set expandtab
 set fileformat=unix            " file mode is unix
 set fileformats=unix,dos,mac   " detects unix, dos, mac file formats in that order
 set hidden                     " allows making buffers hidden even with unsaved changes
@@ -79,6 +80,8 @@ set shiftround                 " makes indenting a multiple of shiftwidth
 set smartcase                  " but become case sensitive if you type uppercase characters
 set smarttab                   " smart tab handling for indenting
 set switchbuf=useopen,usetab
+set shiftwidth=2
+set tabstop=2
 set timeoutlen=500             " Timeout for mapping
 
 " When you type the first tab, it will complete as much as possible, the second
@@ -151,13 +154,6 @@ autocmd vimrc FileType text,markdown,gitcommit set nocindent
 " Auto turn on spell check for markdown file, gitcommit
 autocmd vimrc FileType markdown setlocal spell! spelllang=en_us
 autocmd vimrc FileType gitcommit setlocal spell! spelllang=en_us
-
-autocmd vimrc Filetype ruby setlocal ts=2 sw=2 expandtab
-autocmd vimrc Filetype eruby setlocal ts=2 sw=2 expandtab
-autocmd vimrc Filetype html setlocal ts=2 sw=2 expandtab
-autocmd vimrc Filetype javascript setlocal ts=2 sw=2 expandtab
-autocmd vimrc Filetype coffee setlocal ts=2 sw=2 expandtab
-autocmd vimrc Filetype r setlocal ts=2 sw=2 expandtab commentstring=#\ %s
 
 try
   lang zh_TW

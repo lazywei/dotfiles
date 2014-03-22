@@ -19,6 +19,8 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'othree/javascript-libraries-syntax.vim'
 Bundle 'pangloss/vim-javascript'
+" Need install via npm, see doc
+Bundle 'marijnh/tern_for_vim'
 
 " Html, Xml, Css, Markdown...
 Bundle 'helino/vim-json'
@@ -40,6 +42,9 @@ Bundle 'dgryski/vim-godef'
 " Latex
 Bundle 'gerw/vim-latex-suite'
 
+" Python
+Bundle 'ivanov/vim-ipython'
+
 " Other languages...
 Bundle 'lazywei/vim-matlab'
 
@@ -58,15 +63,15 @@ Bundle 'tomtom/tlib_vim'
 " Unite...
 " vimproc need manually build
 Bundle 'Shougo/vimproc.vim'
-Bundle 'Shougo/unite.vim'
-Bundle 'Shougo/unite-outline'
-Bundle 'tsukkee/unite-help'
-Bundle 'ujihisa/unite-locate'
-Bundle 'thinca/vim-unite-history'
-Bundle 'osyo-manga/unite-filetype'
-Bundle 'osyo-manga/unite-quickfix'
-Bundle 'osyo-manga/unite-fold'
-Bundle 'tacroe/unite-mark'
+" Bundle 'Shougo/unite.vim'
+" Bundle 'Shougo/unite-outline'
+" Bundle 'tsukkee/unite-help'
+" Bundle 'ujihisa/unite-locate'
+" Bundle 'thinca/vim-unite-history'
+" Bundle 'osyo-manga/unite-filetype'
+" Bundle 'osyo-manga/unite-quickfix'
+" Bundle 'osyo-manga/unite-fold'
+" Bundle 'tacroe/unite-mark'
 " File explorer (needed where ranger is not available)
 " Bundle 'Shougo/vimfiler'
 " Junk files
@@ -79,8 +84,9 @@ Bundle 'jingweno/vimux-zeus'
 " General improvements...
 Bundle 'editorconfig/editorconfig-vim'
 Bundle 'techlivezheng/vim-plugin-minibufexpl'
-Bundle 'godlygeek/tabular'
+" Bundle 'godlygeek/tabular'
 Bundle 'justinmk/vim-sneak'
+Bundle 'junegunn/vim-easy-align'
 Bundle 'kien/ctrlp.vim'
 Bundle 'kana/vim-smartinput'
 Bundle 'lazywei/YankRing.vim'
@@ -103,7 +109,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'tpope/vim-commentary'
 Bundle 'tacahiroy/ctrlp-funky'
-" Bundle 'tpope/vim-vinegar'
+Bundle 'tpope/vim-vinegar'
 Bundle 'Valloric/MatchTagAlways'
 " YCM need extra binaries, see doc.
 Bundle 'Valloric/YouCompleteMe'

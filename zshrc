@@ -50,7 +50,7 @@ export PATH=/usr/local/bin:$PATH
 export PATH=$PATH:$HOME/bin
 
 # For pip
-export PATH=$PATH:$(brew --prefix)/share/python
+# export PATH=$PATH:$(brew --prefix)/share/python
 
 # For nodejs's npm and nodejs
 export PATH=$PATH:/usr/local/share/npm/bin:/usr/local/bin/node
