@@ -33,7 +33,7 @@ alias gdt="git difftool -y"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git encode64 gem rails cap extract zeus tmux tmuxinator vi-mode)
 
-export ZSH_HIGHLIGHT_HIGHLIGHTERS="(mail brackets pattern cursor root)"
+export ZSH_HIGHLIGHT_HIGHLIGHTERS="(mail brackets pattern cursor root docker)"
 
 export EDITOR=/usr/local/bin/vim
 
@@ -76,3 +76,7 @@ export PATH="$PATH:$HOME/railsbricks"
 export PATH=/Users/lazywei/GoProjects/tools/bin:$PATH
 
 eval "$(direnv hook zsh)"
+
+export DOCKER_HOST=tcp://localhost:4243
+
+stty stop undef # to unmap ctrl-s
