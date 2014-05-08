@@ -4,133 +4,133 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 
 " Ruby, Rails, Rake...
 " by default this syntax is used with all *_spec.rb
-Bundle 'ck3g/vim-change-hash-syntax'
-Bundle 'Keithbsmiley/rspec.vim'
-Bundle 'thoughtbot/vim-rspec'
-Bundle 'tpope/vim-rails.git'
-Bundle 'vim-ruby/vim-ruby'
+Plugin 'ck3g/vim-change-hash-syntax'
+Plugin 'Keithbsmiley/rspec.vim'
+Plugin 'thoughtbot/vim-rspec'
+Plugin 'tpope/vim-rails.git'
+Plugin 'vim-ruby/vim-ruby'
 
 " Javascript...
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'othree/javascript-libraries-syntax.vim'
-Bundle 'pangloss/vim-javascript'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'pangloss/vim-javascript'
 " Need install via npm, see doc
-Bundle 'marijnh/tern_for_vim'
+Plugin 'marijnh/tern_for_vim'
 
 " Html, Xml, Css, Markdown...
-Bundle 'helino/vim-json'
-Bundle 'mattn/emmet-vim'
-Bundle 'othree/html5.vim'
-Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-repeat'
+Plugin 'helino/vim-json'
+Plugin 'mattn/emmet-vim'
+Plugin 'othree/html5.vim'
+Plugin 'tpope/vim-markdown'
 
 " Haskell...
-Bundle 'bitc/vim-hdevtools'
+Plugin 'bitc/vim-hdevtools'
 
 " Go...
-" Bundle 'jnwhiteh/vim-golang'
+" Plugin 'jnwhiteh/vim-golang'
 " gocode and godef need extra installation, see github.
-Bundle 'Blackrush/vim-gocode'
-Bundle 'dgryski/vim-godef'
-" Bundle 'fsouza/go.vim'
+" Plugin 'Blackrush/vim-gocode'
+" Plugin 'dgryski/vim-godef'
+" Plugin 'fsouza/go.vim'
+Plugin 'fatih/vim-go'
 
 " Latex
-Bundle 'gerw/vim-latex-suite'
+Plugin 'gerw/vim-latex-suite'
 
 " Python
-Bundle 'ivanov/vim-ipython'
+Plugin 'ivanov/vim-ipython'
 
 " Other languages...
-Bundle 'lazywei/vim-matlab'
+Plugin 'lazywei/vim-matlab'
 
 " Git related...
-Bundle 'airblade/vim-gitgutter'
-Bundle 'gregsexton/gitv'
-Bundle 'mattn/gist-vim'
-Bundle 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'gregsexton/gitv'
+Plugin 'mattn/gist-vim'
+Plugin 'tpope/vim-fugitive'
 
 " SnipMate...
-Bundle 'garbas/vim-snipmate'
-Bundle 'honza/vim-snippets'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
 
 " Unite...
 " vimproc need manually build
-Bundle 'Shougo/vimproc.vim'
-" Bundle 'Shougo/unite.vim'
-" Bundle 'Shougo/unite-outline'
-" Bundle 'tsukkee/unite-help'
-" Bundle 'ujihisa/unite-locate'
-" Bundle 'thinca/vim-unite-history'
-" Bundle 'osyo-manga/unite-filetype'
-" Bundle 'osyo-manga/unite-quickfix'
-" Bundle 'osyo-manga/unite-fold'
-" Bundle 'tacroe/unite-mark'
+Plugin 'Shougo/vimproc.vim'
+" Plugin 'Shougo/unite.vim'
+" Plugin 'Shougo/unite-outline'
+" Plugin 'tsukkee/unite-help'
+" Plugin 'ujihisa/unite-locate'
+" Plugin 'thinca/vim-unite-history'
+" Plugin 'osyo-manga/unite-filetype'
+" Plugin 'osyo-manga/unite-quickfix'
+" Plugin 'osyo-manga/unite-fold'
+" Plugin 'tacroe/unite-mark'
 " File explorer (needed where ranger is not available)
-" Bundle 'Shougo/vimfiler'
+" Plugin 'Shougo/vimfiler'
 " Junk files
-" Bundle 'Shougo/junkfile.vim'
+" Plugin 'Shougo/junkfile.vim'
 
 " Tmux...
-Bundle 'benmills/vimux'
-Bundle 'jingweno/vimux-zeus'
+Plugin 'benmills/vimux'
+Plugin 'jingweno/vimux-zeus'
 
 " General improvements...
-Bundle 'editorconfig/editorconfig-vim'
-Bundle 'techlivezheng/vim-plugin-minibufexpl'
-" Bundle 'godlygeek/tabular'
-Bundle 'justinmk/vim-sneak'
-Bundle 'junegunn/vim-easy-align'
-Bundle 'kien/ctrlp.vim'
-Bundle 'lazywei/YankRing.vim'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'mattn/webapi-vim'
-" Bundle 'mileszs/ack.vim'
-Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'nelstrom/vim-visual-star-search'
-Bundle 'Rykka/colorv.vim'
-Bundle 'rking/ag.vim'
-" Bundle 'Raimondi/delimitMate'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'tpope/vim-abolish'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-ragtag'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'tpope/vim-commentary'
-Bundle 'tacahiroy/ctrlp-funky'
-Bundle 'tpope/vim-vinegar'
-Bundle 'Valloric/MatchTagAlways'
+Plugin 'editorconfig/editorconfig-vim'
+Plugin 'techlivezheng/vim-plugin-minibufexpl'
+" Plugin 'godlygeek/tabular'
+Plugin 'justinmk/vim-sneak'
+Plugin 'junegunn/vim-easy-align'
+Plugin 'kien/ctrlp.vim'
+Plugin 'lazywei/YankRing.vim'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'mattn/webapi-vim'
+" Plugin 'mileszs/ack.vim'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'nelstrom/vim-visual-star-search'
+Plugin 'Rykka/colorv.vim'
+Plugin 'rking/ag.vim'
+" Plugin 'Raimondi/delimitMate'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'tpope/vim-abolish'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-ragtag'
+Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-commentary'
+Plugin 'tacahiroy/ctrlp-funky'
+Plugin 'tpope/vim-vinegar'
+Plugin 'Valloric/MatchTagAlways'
 " YCM need extra binaries, see doc.
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'vim-scripts/matchit.zip'
-" Bundle 'vim-scripts/netrw.vim'
-Bundle 'xuhdev/SingleCompile'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-scripts/matchit.zip'
+" Plugin 'vim-scripts/netrw.vim'
+Plugin 'xuhdev/SingleCompile'
 
 " Text objects...
-Bundle 'bootleq/vim-textobj-rubysymbol'
-Bundle 'briandoll/change-inside-surroundings.vim'
-Bundle 'coderifous/textobj-word-column.vim'
-Bundle 'kana/vim-textobj-user'
-Bundle 'lucapette/vim-textobj-underscore'
-Bundle 'michaeljsmith/vim-indent-object'
-Bundle 'nelstrom/vim-textobj-rubyblock'
+Plugin 'bootleq/vim-textobj-rubysymbol'
+Plugin 'briandoll/change-inside-surroundings.vim'
+Plugin 'coderifous/textobj-word-column.vim'
+Plugin 'kana/vim-textobj-user'
+Plugin 'lucapette/vim-textobj-underscore'
+Plugin 'michaeljsmith/vim-indent-object'
+Plugin 'nelstrom/vim-textobj-rubyblock'
 
 " Cosmetics, color scheme, Powerline...
-Bundle 'bling/vim-airline'
-Bundle 'Valloric/vim-valloric-colorscheme'
-Bundle 'vim-scripts/TagHighlight'
+Plugin 'bling/vim-airline'
+Plugin 'Valloric/vim-valloric-colorscheme'
+Plugin 'vim-scripts/TagHighlight'
 
 " My plugins...
-Bundle 'lazywei/vim-language-specific'
-Bundle 'lazywei/vim-doc-tw'
-Bundle 'lazywei/vim-lazywei-colorscheme'
+Plugin 'lazywei/vim-language-specific'
+Plugin 'lazywei/vim-doc-tw'
+Plugin 'lazywei/vim-lazywei-colorscheme'
