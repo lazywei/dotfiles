@@ -19,10 +19,10 @@ if exists('$TMUX')
   nnoremap <silent> <C-k> :call TmuxOrSplitSwitch('k', 'U')<CR>
   nnoremap <silent> <C-l> :call TmuxOrSplitSwitch('l', 'R')<CR>
 else
-  map <C-h> <C-w>h
-  map <C-j> <C-w>j
-  map <C-k> <C-w>k
-  map <C-l> <C-w>l
+  nnoremap <C-h> <C-w>h
+  nnoremap <C-j> <C-w>j
+  nnoremap <C-k> <C-w>k
+  nnoremap <C-l> <C-w>l
 endif
 
 " }}}

@@ -1,4 +1,4 @@
-nnoremap <leader>o :CtrlP<CR>
+let g:ctrlp_map = '<leader>o'
 nnoremap <leader>f :CtrlPLine<CR>
 nnoremap <D-p> :CtrlP<CR>
 

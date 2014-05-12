@@ -59,7 +59,7 @@ export PATH=$PATH:/usr/local/share/npm/bin:/usr/local/bin/node
 export PATH=$PATH:$HOME/.cabal/bin
 
 # For golang
-# export GOPATH=$HOME/go
+export GOPATH=/tmp
 # export PATH=$PATH:$GOPATH/bin
 
 ### Added by the Heroku Toolbelt

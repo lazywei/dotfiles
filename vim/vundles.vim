@@ -114,6 +114,7 @@ Plugin 'Valloric/MatchTagAlways'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-scripts/matchit.zip'
 " Plugin 'vim-scripts/netrw.vim'
+Plugin 'vim-scripts/listmaps.vim'
 Plugin 'xuhdev/SingleCompile'
 
 " Text objects...
