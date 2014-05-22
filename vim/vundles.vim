@@ -83,7 +83,7 @@ Plugin 'jingweno/vimux-zeus'
 
 " General improvements...
 Plugin 'editorconfig/editorconfig-vim'
-Plugin 'techlivezheng/vim-plugin-minibufexpl'
+" Plugin 'techlivezheng/vim-plugin-minibufexpl'
 " Plugin 'godlygeek/tabular'
 Plugin 'justinmk/vim-sneak'
 Plugin 'junegunn/vim-easy-align'
@@ -130,6 +130,7 @@ Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'bling/vim-airline'
 Plugin 'Valloric/vim-valloric-colorscheme'
 Plugin 'vim-scripts/TagHighlight'
+Plugin 'Pychimp/vim-luna'
 
 " My plugins...
 Plugin 'lazywei/vim-language-specific'
