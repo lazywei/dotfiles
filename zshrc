@@ -1,17 +1,25 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+source ~/dotfiles/antigen/antigen.zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+antigen use oh-my-zsh
+
+antigen bundles <<EOBUNDLES
+git
+heroku
+pip
+command-not-found
+
+zsh-users/zsh-syntax-highlighting
+EOBUNDLES
+
+antigen theme robbyrussell
+
+antigen apply
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias gdt="git difftool -y"
-#alias vim="/usr/local/Cellar/macvim/7.4-70/MacVim.app/Contents/MacOS/Vim"
+# alias vim="/usr/local/Cellar/macvim/7.4-70/MacVim.app/Contents/MacOS/Vim"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -28,19 +36,10 @@ alias gdt="git difftool -y"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git encode64 gem rails cap extract zeus tmux tmuxinator vi-mode)
-
-export ZSH_HIGHLIGHT_HIGHLIGHTERS="(mail brackets pattern cursor root docker)"
-
 export EDITOR=/usr/local/bin/vim
 
-source $ZSH/oh-my-zsh.sh
+# ---- Set Path ----
 
-# Setting Path
-# export PATH=/home/kusoayan/.rvm/gems/ruby-1.9.3-p194/bin:/home/kusoayan/.rvm/gems/ruby-1.9.3-p194@global/bin:/home/kusoayan/.rvm/rubies/ruby-1.9.3-p194/bin:/home/kusoayan/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/vendor_perl:/usr/bin/core_perl:/opt/qt/bin:/home/kusoayan/.gem/ruby/1.9.1/bin:/home/kusoayan/.rvm/bin
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 export PATH=/Users/lazywei/.rbenv/shims:/Users/lazywei/.rbenv/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/go/bin:/usr/texbin
