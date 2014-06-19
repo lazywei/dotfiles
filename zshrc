@@ -8,10 +8,20 @@ heroku
 pip
 command-not-found
 
+brew
+npm
+bower
+docker
+urltools # urlencode
+
 zsh-users/zsh-syntax-highlighting
 EOBUNDLES
 
-antigen theme robbyrussell
+# antigen theme robbyrussell
+# antigen theme bira
+# antigen theme cypher
+antigen theme lambda
+
 
 antigen apply
 
@@ -76,6 +86,10 @@ export PATH=/Users/lazywei/GoProjects/tools/bin:$PATH
 
 eval "$(direnv hook zsh)"
 
-export DOCKER_HOST=tcp://localhost:4243
+export DOCKER_HOST=tcp://:2375
 
 stty stop undef # to unmap ctrl-s
+
+# PETSc
+export PETSC_DIR="/usr/local/Cellar/petsc/3.4.4"
+export PETSC_ARCH="arch-darwin-c-opt"
