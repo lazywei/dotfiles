@@ -47,6 +47,7 @@ Plugin 'ivanov/vim-ipython'
 
 " Other languages...
 Plugin 'lazywei/vim-matlab'
+Plugin 'vim-scripts/freefem.vim'
 
 " Git related...
 Plugin 'airblade/vim-gitgutter'
@@ -107,6 +108,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-sleuth'
 Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'tpope/vim-vinegar'
 Plugin 'Valloric/MatchTagAlways'

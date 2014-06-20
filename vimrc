@@ -80,8 +80,8 @@ set shiftround                 " makes indenting a multiple of shiftwidth
 set smartcase                  " but become case sensitive if you type uppercase characters
 set smarttab                   " smart tab handling for indenting
 set switchbuf=useopen,usetab
-set shiftwidth=2
-set tabstop=2
+" set shiftwidth=2
+" set tabstop=2
 set timeoutlen=500             " Timeout for mapping
 
 " When you type the first tab, it will complete as much as possible, the second
