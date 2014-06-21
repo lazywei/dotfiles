@@ -133,6 +133,7 @@ Plugin 'bling/vim-airline'
 Plugin 'Valloric/vim-valloric-colorscheme'
 Plugin 'vim-scripts/TagHighlight'
 Plugin 'Pychimp/vim-luna'
+Plugin 'jnurmine/Zenburn'
 
 " My plugins...
 Plugin 'lazywei/vim-language-specific'
