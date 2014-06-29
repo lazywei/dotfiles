@@ -56,10 +56,12 @@ Plugin 'mattn/gist-vim'
 Plugin 'tpope/vim-fugitive'
 
 " SnipMate...
-Plugin 'garbas/vim-snipmate'
+" Plugin 'garbas/vim-snipmate'
+" Bundle 'ervandew/supertab'
+Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
+" Plugin 'MarcWeber/vim-addon-mw-utils'
+" Plugin 'tomtom/tlib_vim'
 
 " Unite...
 " vimproc need manually build
