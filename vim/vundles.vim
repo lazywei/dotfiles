@@ -44,10 +44,12 @@ Plugin 'gerw/vim-latex-suite'
 
 " Python
 Plugin 'ivanov/vim-ipython'
+Plugin 'klen/python-mode'
 
 " Other languages...
 Plugin 'lazywei/vim-matlab'
 Plugin 'vim-scripts/freefem.vim'
+Plugin 'ekalinin/Dockerfile.vim'
 
 " Git related...
 Plugin 'airblade/vim-gitgutter'
@@ -97,6 +99,7 @@ Plugin 'mattn/webapi-vim'
 " Plugin 'mileszs/ack.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'nelstrom/vim-visual-star-search'
+Plugin 'osyo-manga/vim-over'
 Plugin 'Rykka/colorv.vim'
 Plugin 'rking/ag.vim'
 " Plugin 'Raimondi/delimitMate'
@@ -107,6 +110,7 @@ Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-ragtag'
 Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-rsi'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-commentary'
