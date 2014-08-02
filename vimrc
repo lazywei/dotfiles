@@ -104,9 +104,9 @@ endfun
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme valloric
+" colorscheme valloric
 " colorscheme zenburn
-" colorscheme badwolf
+colorscheme badwolf
 syntax enable
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
@@ -173,3 +173,5 @@ endif
 
 " Use system clipboard
 set clipboard=unnamed
+
+set rtp+=~/.fzf
