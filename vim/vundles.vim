@@ -27,6 +27,8 @@ Plugin 'helino/vim-json'
 Plugin 'mattn/emmet-vim'
 Plugin 'othree/html5.vim'
 Plugin 'tpope/vim-markdown'
+Plugin 'kannokanno/previm'
+Plugin 'tyru/open-browser.vim'
 
 " Haskell...
 Plugin 'bitc/vim-hdevtools'
@@ -136,10 +138,11 @@ Plugin 'nelstrom/vim-textobj-rubyblock'
 
 " Cosmetics, color scheme, Powerline...
 Plugin 'bling/vim-airline'
+Plugin 'jnurmine/Zenburn'
+Plugin 'Pychimp/vim-luna'
+Plugin 'sjl/badwolf'
 Plugin 'Valloric/vim-valloric-colorscheme'
 Plugin 'vim-scripts/TagHighlight'
-Plugin 'Pychimp/vim-luna'
-Plugin 'jnurmine/Zenburn'
 
 " My plugins...
 Plugin 'lazywei/vim-language-specific'

@@ -104,8 +104,9 @@ endfun
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" colorscheme valloric
-colorscheme zenburn
+colorscheme valloric
+" colorscheme zenburn
+" colorscheme badwolf
 syntax enable
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
 set sidescrolloff=15

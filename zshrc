@@ -93,3 +93,9 @@ stty stop undef # to unmap ctrl-s
 # PETSc
 export PETSC_DIR="/usr/local/Cellar/petsc/3.4.4"
 export PETSC_ARCH="arch-darwin-c-opt"
+
+# temp added, need to find out a better solution
+export PATH="$PATH:`xcode-select -print-path`/usr/bin"
+
+# Ref: https://ruby-china.org/topics/19748
+export CONFIGURE_OPTS='--disable-dtrace'
