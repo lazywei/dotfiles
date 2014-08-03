@@ -106,7 +106,9 @@ endfun
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " colorscheme valloric
 " colorscheme zenburn
-colorscheme badwolf
+" colorscheme badwolf
+let g:seoul256_background = 235
+colorscheme seoul256
 syntax enable
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
@@ -164,8 +166,8 @@ endtry
 
 " Go back to the location last time edited when open files.
 if has("autocmd")
-  autocmd BufRead *.txt set tw=78
-  autocmd BufReadPost *
+  autocmd vimrc BufRead *.txt set tw=78
+  autocmd vimrc BufReadPost *
         \ if line("'\"") > 0 && line ("'\"") <= line("$") |
         \   exe "normal g'\"" |
         \ endif

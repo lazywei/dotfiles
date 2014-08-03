@@ -54,9 +54,10 @@ Plugin 'vim-scripts/freefem.vim'
 Plugin 'ekalinin/Dockerfile.vim'
 
 " Git related...
-Plugin 'airblade/vim-gitgutter'
+" Plugin 'airblade/vim-gitgutter'
 Plugin 'gregsexton/gitv'
 Plugin 'mattn/gist-vim'
+Plugin 'mhinz/vim-signify'
 Plugin 'tpope/vim-fugitive'
 
 " SnipMate...
@@ -94,6 +95,7 @@ Plugin 'editorconfig/editorconfig-vim'
 " Plugin 'godlygeek/tabular'
 Plugin 'justinmk/vim-sneak'
 Plugin 'junegunn/vim-easy-align'
+Plugin 'junegunn/limelight.vim'
 " Plugin 'kien/ctrlp.vim'
 Plugin 'lazywei/YankRing.vim'
 Plugin 'Lokaltog/vim-easymotion'
@@ -140,6 +142,7 @@ Plugin 'nelstrom/vim-textobj-rubyblock'
 " Cosmetics, color scheme, Powerline...
 Plugin 'bling/vim-airline'
 Plugin 'jnurmine/Zenburn'
+Plugin 'junegunn/seoul256.vim'
 Plugin 'Pychimp/vim-luna'
 Plugin 'sjl/badwolf'
 Plugin 'Valloric/vim-valloric-colorscheme'
