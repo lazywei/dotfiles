@@ -31,14 +31,9 @@ Plugin 'kannokanno/previm'
 Plugin 'tyru/open-browser.vim'
 
 " Haskell...
-Plugin 'bitc/vim-hdevtools'
+" Plugin 'bitc/vim-hdevtools'
 
 " Go...
-" Plugin 'jnwhiteh/vim-golang'
-" gocode and godef need extra installation, see github.
-" Plugin 'Blackrush/vim-gocode'
-" Plugin 'dgryski/vim-godef'
-" Plugin 'fsouza/go.vim'
 Plugin 'fatih/vim-go'
 
 " Latex
@@ -54,15 +49,12 @@ Plugin 'vim-scripts/freefem.vim'
 Plugin 'ekalinin/Dockerfile.vim'
 
 " Git related...
-" Plugin 'airblade/vim-gitgutter'
-Plugin 'gregsexton/gitv'
 Plugin 'mattn/gist-vim'
 Plugin 'mhinz/vim-signify'
 Plugin 'tpope/vim-fugitive'
 
 " SnipMate...
 " Plugin 'garbas/vim-snipmate'
-" Bundle 'ervandew/supertab'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 " Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -96,39 +88,31 @@ Plugin 'editorconfig/editorconfig-vim'
 Plugin 'justinmk/vim-sneak'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'junegunn/limelight.vim'
-" Plugin 'kien/ctrlp.vim'
 Plugin 'lazywei/YankRing.vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'mattn/webapi-vim'
-" Plugin 'mileszs/ack.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'nelstrom/vim-visual-star-search'
 Plugin 'osyo-manga/vim-over'
-Plugin 'Rykka/colorv.vim'
 Plugin 'rking/ag.vim'
-" Plugin 'Raimondi/delimitMate'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-ragtag'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-rsi'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-sleuth'
-" Plugin 'tacahiroy/ctrlp-funky'
 Plugin 'tpope/vim-vinegar'
 Plugin 'Valloric/MatchTagAlways'
 " YCM need extra binaries, see doc.
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-scripts/matchit.zip'
-" Plugin 'vim-scripts/netrw.vim'
-Plugin 'vim-scripts/listmaps.vim'
-" Plugin 'wincent/Command-T'
-Plugin 'xuhdev/SingleCompile'
+" Find out where maps are defined
+" Plugin 'vim-scripts/listmaps.vim'
+" Plugin 'xuhdev/SingleCompile'
 
 " Text objects...
 Plugin 'bootleq/vim-textobj-rubysymbol'
@@ -146,7 +130,7 @@ Plugin 'junegunn/seoul256.vim'
 Plugin 'Pychimp/vim-luna'
 Plugin 'sjl/badwolf'
 Plugin 'Valloric/vim-valloric-colorscheme'
-Plugin 'vim-scripts/TagHighlight'
+" Plugin 'vim-scripts/TagHighlight'
 
 " My plugins...
 Plugin 'lazywei/vim-language-specific'

@@ -59,6 +59,10 @@ noremap <Leader>sc ]sz=
 noremap <Leader>sa zg
 " }}}
 
+" Switch between buffers
+noremap <S-h> :bp<CR>
+noremap <S-l> :bn<CR>
+
 " Close the current buffer
 
 nnoremap <Leader>K <C-w>c
