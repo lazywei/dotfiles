@@ -40,8 +40,11 @@ vnoremap ; :
 vnoremap : ;
 
 " Vundle
-if filereadable(expand("~/.vim/vundles.vim"))
-  source ~/.vim/vundles.vim
+" if filereadable(expand("~/.vim/vundles.vim"))
+"   source ~/.vim/vundles.vim
+" endif
+if filereadable(expand("~/.vim/plugs.vim"))
+  source ~/.vim/plugs.vim
 endif
 
 " Enable filetype plugin
