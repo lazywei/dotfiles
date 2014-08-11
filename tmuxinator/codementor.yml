@@ -1,7 +1,7 @@
-# ~/.tmuxinator/go-knife.yml
+# ~/.tmuxinator/codementor.yml
 
-name: go-knife
-root: ~/go/src/github.com/polydice/knife
+name: codementor
+root: ~/Projects/codementor
 
 # Optional tmux socket
 # socket_name: foo
@@ -19,5 +19,12 @@ root: ~/go/src/github.com/polydice/knife
 # tmux_command: byobu
 
 windows:
-  - editor: vim
-  - goconvey: goconvey
+  - editor:
+      layout: main-vertical
+      panes:
+        - vim
+        - ./bin/console
+  - worker:
+      panes:
+        - ./bin/server
+        - ./bin/worker

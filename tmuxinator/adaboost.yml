@@ -1,7 +1,7 @@
-# ~/.tmuxinator/rails-icook.yml
+# ~/.tmuxinator/adaboost.yml
 
-name: rails-icook
-root: ~/Projects/iCook
+name: adaboost
+root: ~/cllab/adaboost_tt/
 
 # Optional tmux socket
 # socket_name: foo
@@ -20,8 +20,4 @@ root: ~/Projects/iCook
 
 windows:
   - editor: vim
-  - zeus:
-      layout: main-vertical
-      panes:
-        - zeus server
-        - zeus start
+  - ipython: ipython
