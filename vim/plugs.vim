@@ -13,7 +13,7 @@ Plug 'kchmck/vim-coffee-script'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'pangloss/vim-javascript'
 " Need install via npm, see doc
-Plug 'marijnh/tern_for_vim'
+Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 
 " Html, Xml, Css, Markdown...
 Plug 'helino/vim-json'
@@ -38,7 +38,6 @@ Plug 'klen/python-mode'
 
 " Other languages...
 Plug 'lazywei/vim-matlab'
-Plug 'vim-scripts/freefem.vim'
 Plug 'ekalinin/Dockerfile.vim'
 
 " Git related...
@@ -46,29 +45,20 @@ Plug 'mattn/gist-vim'
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 
-" SnipMate...
-" Plug 'garbas/vim-snipmate'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-" Plug 'MarcWeber/vim-addon-mw-utils'
-" Plug 'tomtom/tlib_vim'
+" Code completion
+" See: https://github.com/junegunn/vim-plug/wiki/faq#loading-plugins-manually
+Plug 'Valloric/YouCompleteMe', { 'on': [], 'do': './install.sh --clang-completer' }
+Plug 'SirVer/ultisnips', { 'on': [] }
+Plug 'honza/vim-snippets', { 'on': [] }
+augroup load_us_ycm
+  autocmd!
+  autocmd InsertEnter * call plug#load('ultisnips', 'vim-snippets', 'YouCompleteMe')
+                     \| call youcompleteme#Enable() | autocmd! load_us_ycm
+augroup END
 
 " Unite...
 " vimproc need manually build
 Plug 'Shougo/vimproc.vim'
-" Plug 'Shougo/unite.vim'
-" Plug 'Shougo/unite-outline'
-" Plug 'tsukkee/unite-help'
-" Plug 'ujihisa/unite-locate'
-" Plug 'thinca/vim-unite-history'
-" Plug 'osyo-manga/unite-filetype'
-" Plug 'osyo-manga/unite-quickfix'
-" Plug 'osyo-manga/unite-fold'
-" Plug 'tacroe/unite-mark'
-" File explorer (needed where ranger is not available)
-" Plug 'Shougo/vimfiler'
-" Junk files
-" Plug 'Shougo/junkfile.vim'
 
 " Tmux...
 Plug 'benmills/vimux'
@@ -77,7 +67,6 @@ Plug 'jingweno/vimux-zeus'
 " General improvements...
 Plug 'editorconfig/editorconfig-vim'
 " Plug 'techlivezheng/vim-plugin-minibufexpl'
-" Plug 'godlygeek/tabular'
 Plug 'justinmk/vim-sneak'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/limelight.vim'
@@ -86,7 +75,7 @@ Plug 'Lokaltog/vim-easymotion'
 Plug 'mattn/webapi-vim'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'nelstrom/vim-visual-star-search'
-Plug 'osyo-manga/vim-over'
+Plug 'osyo-manga/vim-over', { 'on':  'OverCommandLine' }
 Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'scrooloose/syntastic'
@@ -100,34 +89,37 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-vinegar'
 Plug 'Valloric/MatchTagAlways'
-" YCM need extra binaries, see doc.
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh --clang-completer' }
 Plug 'vim-scripts/matchit.zip'
 " Find out where maps are defined
 " Plug 'vim-scripts/listmaps.vim'
 " Plug 'xuhdev/SingleCompile'
 
 " Text objects...
-Plug 'bootleq/vim-textobj-rubysymbol'
+Plug 'bootleq/vim-textobj-rubysymbol', { 'for': ['ruby', 'haml'] }
 Plug 'briandoll/change-inside-surroundings.vim'
 Plug 'coderifous/textobj-word-column.vim'
 Plug 'kana/vim-textobj-user'
 Plug 'lucapette/vim-textobj-underscore'
 Plug 'michaeljsmith/vim-indent-object'
-Plug 'nelstrom/vim-textobj-rubyblock'
+Plug 'nelstrom/vim-textobj-rubyblock', { 'for': ['ruby', 'haml'] }
 
 " Cosmetics, color scheme, Powerline...
 Plug 'bling/vim-airline'
-Plug 'jnurmine/Zenburn'
+" Plug 'jnurmine/Zenburn'
 Plug 'junegunn/seoul256.vim'
-Plug 'Pychimp/vim-luna'
-Plug 'sjl/badwolf'
-Plug 'Valloric/vim-valloric-colorscheme'
-" Plug 'vim-scripts/TagHighlight'
+" Plug 'Valloric/vim-valloric-colorscheme'
+
+
+" Tags...
+Plug 'szw/vim-tags'
+Plug 'majutsushi/tagbar'
+Plug 'rizzatti/dash.vim'
+" Plug 'xolox/vim-misc'
+" Plug 'xolox/vim-easytags'
 
 " My plugins...
 Plug 'lazywei/vim-language-specific'
 Plug 'lazywei/vim-doc-tw'
-Plug 'lazywei/vim-lazywei-colorscheme'
+Plug 'vim-sourcegraph'
 
 call plug#end()
