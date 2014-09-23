@@ -14,6 +14,9 @@ bower
 docker
 urltools # urlencode
 
+osx
+terminalapp
+
 zsh-users/zsh-syntax-highlighting
 EOBUNDLES
 
@@ -30,6 +33,7 @@ antigen apply
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias gdt="git difftool -y"
 # alias vim="/usr/local/Cellar/macvim/7.4-70/MacVim.app/Contents/MacOS/Vim"
+hash -d gdrive=/Volumes/jetdrive/GoogleDrive
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -68,7 +72,7 @@ export PATH=$PATH:/usr/local/share/npm/bin:/usr/local/bin/node
 export PATH=$PATH:$HOME/.cabal/bin
 
 # For golang
-export GOPATH=/tmp
+export GOPATH=$HOME
 # export PATH=$PATH:$GOPATH/bin
 
 ### Added by the Heroku Toolbelt

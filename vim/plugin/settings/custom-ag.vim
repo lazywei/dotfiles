@@ -13,7 +13,7 @@ command! -nargs=1 AgFZF call fzf#run({
 
 function! AgHandler(l)
     let keys = split(a:l,':')
-    execute 'tabe +' . keys[-2] . ' ' . escape(keys[-1], ' ')
+    execute 'e +' . keys[-2] . ' ' . escape(keys[-1], ' ')
 endfunction 
 
 function! Arghandler(l)

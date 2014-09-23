@@ -114,12 +114,13 @@ Plug 'junegunn/seoul256.vim'
 Plug 'szw/vim-tags'
 Plug 'majutsushi/tagbar'
 Plug 'rizzatti/dash.vim'
-" Plug 'xolox/vim-misc'
+Plug 'xolox/vim-misc'
+Plug 'tomtom/tlib_vim'
 " Plug 'xolox/vim-easytags'
 
 " My plugins...
 Plug 'lazywei/vim-language-specific'
 Plug 'lazywei/vim-doc-tw'
-Plug 'vim-sourcegraph'
+Plug 'lazywei/vim-sourcegraph'
 
 call plug#end()
