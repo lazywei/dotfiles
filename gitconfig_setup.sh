@@ -1,6 +1,6 @@
 #!/bin/bash
 
-git config --global user.name "Bert Chang"
+git config --global user.name "Chih-Wei (Bert) Chang"
 
 current_email=$(git config --global --get user.email)
 
