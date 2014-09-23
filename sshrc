@@ -1,0 +1,4 @@
+cp -r $SSHHOME/.sshrc.d/vim/* ~/.vim/
+cp $SSHHOME/.sshrc.d/vimrc ~/.vimrc
+
+vim +PlugInstall -c "qa"
