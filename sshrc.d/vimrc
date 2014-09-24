@@ -6,3 +6,41 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-sleuth'
 
 call plug#end()
+
+let mapleader = ","
+
+" In normal mode, we use : much more often than ; so lets swap them.
+" WARNING: this will cause any "ordinary" map command without the "nore" prefix
+" that uses ":" to fail. For instance, "map <f2> :w" would fail, since vim will
+" read ":w" as ";w" because of the below remappings. Use "noremap"s in such
+" situations and you'll be fine.
+nnoremap ; :
+nnoremap : ;
+vnoremap ; :
+vnoremap : ;
+
+" When you type the first tab, it will complete as much as possible, the second
+" tab hit will provide a list, the third and subsequent tabs will cycle through
+" completion options so you can complete the file without further keys
+set wildmode=longest,list,full
+set wildmenu                   " completion with menu
+set wrap                       " Wrap lines
+set whichwrap+=<,>,h,l,[,]
+
+set list listchars=tab:\ \ ,trail:·
+set nu
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Custom mappings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map 0 ^
+noremap ,. :noh<cr>
+
+nnoremap <leader>w :w!<cr>
+
+" Treat long lines as break lines (useful when moving around in them):
+map j gj
+map k gk
+
+" Map space to / (search) and c-space to ? (backgwards search)
+map <space> /\v

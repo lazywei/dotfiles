@@ -1,4 +1,5 @@
 cp -r $SSHHOME/.sshrc.d/vim/* ~/.vim/
 cp $SSHHOME/.sshrc.d/vimrc ~/.vimrc
+cp $SSHHOME/.sshrc.d/tmux.conf ~/.tmux.conf
 
 vim +PlugInstall -c "qa"
