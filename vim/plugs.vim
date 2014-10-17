@@ -39,6 +39,8 @@ Plug 'klen/python-mode'
 " Other languages...
 Plug 'lazywei/vim-matlab'
 Plug 'ekalinin/Dockerfile.vim'
+Plug 'wting/rust.vim'
+Plug 'cespare/vim-toml'
 
 " Git related...
 Plug 'mattn/gist-vim'

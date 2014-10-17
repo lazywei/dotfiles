@@ -1,6 +1,6 @@
 #!/bin/bash
 
-git config --global user.name "Chih-Wei (Bert) Chang"
+git config --global user.name "Chih-Wei Chang"
 
 current_email=$(git config --global --get user.email)
 
@@ -59,3 +59,4 @@ git config --global pull.rebase true
 #
 #git config --global core.excludesfile ~/.gitignore_global
 
+git config --global url."https://github.com/".insteadOf git://github.com/

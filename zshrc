@@ -34,6 +34,7 @@ antigen apply
 alias gdt="git difftool -y"
 # alias vim="/usr/local/Cellar/macvim/7.4-70/MacVim.app/Contents/MacOS/Vim"
 hash -d gdrive=/Volumes/jetdrive/GoogleDrive
+hash -d jdrive=/Volumes/jetdrive
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -59,6 +60,7 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 export PATH=/Users/lazywei/.rbenv/shims:/Users/lazywei/.rbenv/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/usr/local/go/bin:/usr/texbin
 
 export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/sbin:$PATH
 
 export PATH=$PATH:$HOME/bin
 
