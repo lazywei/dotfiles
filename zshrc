@@ -92,7 +92,9 @@ export PATH=/Users/lazywei/GoProjects/tools/bin:$PATH
 
 eval "$(direnv hook zsh)"
 
-export DOCKER_HOST=tcp://:2375
+export DOCKER_HOST=tcp://192.168.59.103:2376
+export DOCKER_CERT_PATH=/Users/lazywei/.boot2docker/certs/boot2docker-vm
+export DOCKER_TLS_VERIFY=1
 
 stty stop undef # to unmap ctrl-s
 
