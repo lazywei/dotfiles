@@ -19,8 +19,10 @@ flags = [
     'c++',
     '-I',
     '.',
+    '-I',
+    './include',
     '-isystem',
-    '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1',
+    '/usr/include/c++/4.2.1'
 ]
 
 if compilation_database_folder:
