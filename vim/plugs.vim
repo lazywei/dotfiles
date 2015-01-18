@@ -15,6 +15,8 @@ Plug 'pangloss/vim-javascript'
 " Need install via npm, see doc
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 
+Plug 'mxw/vim-jsx'
+
 " Html, Xml, Css, Markdown...
 Plug 'helino/vim-json'
 Plug 'mattn/emmet-vim'
