@@ -18,20 +18,28 @@ osx
 terminalapp
 
 zsh-users/zsh-syntax-highlighting
+
+olivierverdier/zsh-git-prompt
 EOBUNDLES
 
 # antigen theme robbyrussell
 # antigen theme bira
 # antigen theme cypher
-antigen theme lambda
+# antigen theme lambda
 
 
 antigen apply
 
+# ZSH Theme - Preview: http://cl.ly/350F0F0k1M2y3A2i3p1S
+# add git_super_status from zsh-git-prompt
+PROMPT='λ %~/ $(git_super_status)%{$reset_color%}'
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}"
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
+###############################
+
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias gd="git icdiff"
 hash -d gdrive=/Volumes/jetdrive/GoogleDrive
 hash -d jdrive=/Volumes/jetdrive
 

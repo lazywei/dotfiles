@@ -29,8 +29,8 @@ nmap <tab> v>
 nmap <s-tab> v<
 
 " Use the arrows to something usefull
-noremap <right> :bn<cr>
-noremap <left> :bp<cr>
+" noremap <right> :bn<cr>
+" noremap <left> :bp<cr>
 
 " Tab configuration
 noremap <leader>tn :tabnew<CR>
@@ -60,8 +60,10 @@ noremap <Leader>sa zg
 " }}}
 
 " Switch between buffers
-noremap <S-h> :bp<CR>
-noremap <S-l> :bn<CR>
+" noremap <S-h> :bp<CR>
+" noremap <S-l> :bn<CR>
+noremap <S-h> gT
+noremap <S-l> gt
 
 " Close the current buffer
 
