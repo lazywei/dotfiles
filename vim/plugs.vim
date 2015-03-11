@@ -9,13 +9,17 @@ Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
 
 " Javascript...
+Plug 'justinj/vim-react-snippets'
 Plug 'kchmck/vim-coffee-script'
-Plug 'othree/javascript-libraries-syntax.vim'
-Plug 'pangloss/vim-javascript'
-" Need install via npm, see doc
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
-
 Plug 'mxw/vim-jsx'
+Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'othree/yajs.vim'
+Plug 'pangloss/vim-javascript'
+" Plug 'vim-scripts/JSON.vim'
+" Plug 'jiangmiao/simple-javascript-indenter'
+" Plug 'othree/jspc.vim'
+" Plug 'bigfish/vim-js-context-coloring'
 
 " Html, Xml, Css, Markdown...
 Plug 'helino/vim-json'
@@ -43,6 +47,7 @@ Plug 'lazywei/vim-matlab'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'wting/rust.vim'
 Plug 'cespare/vim-toml'
+Plug 'lazywei/vim-swig'
 
 " Git related...
 Plug 'mattn/gist-vim'
@@ -95,6 +100,7 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-vinegar'
 Plug 'Valloric/MatchTagAlways'
 Plug 'vim-scripts/matchit.zip'
+Plug 'vim-scripts/VisIncr'
 " Find out where maps are defined
 " Plug 'vim-scripts/listmaps.vim'
 " Plug 'xuhdev/SingleCompile'
@@ -113,12 +119,12 @@ Plug 'bling/vim-airline'
 " Plug 'jnurmine/Zenburn'
 Plug 'junegunn/seoul256.vim'
 " Plug 'Valloric/vim-valloric-colorscheme'
+" Plug 'nanotech/jellybeans.vim'
 
 
 " Tags...
 Plug 'szw/vim-tags'
 Plug 'majutsushi/tagbar'
-Plug 'rizzatti/dash.vim'
 Plug 'xolox/vim-misc'
 Plug 'tomtom/tlib_vim'
 " Plug 'xolox/vim-easytags'

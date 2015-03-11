@@ -110,8 +110,9 @@ endfun
 " colorscheme valloric
 " colorscheme zenburn
 " colorscheme badwolf
-let g:seoul256_background = 235
+" let g:seoul256_background = 235
 colorscheme seoul256
+" colorscheme jellybeans
 syntax enable
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
@@ -123,12 +124,9 @@ set list listchars=tab:\ \ ,trail:·
 set nu
 
 if MySys() == "mac"
-  set gfn=Menlo:h16
   set shell=/usr/local/bin/zsh
 elseif MySys() == "windows"
-  set gfn=Bitstream\ Vera\ Sans\ Mono:h10
 elseif MySys() == "linux"
-  set gfn=Monaco\ 14
   set shell=/bin/zsh
 endif
 
@@ -142,6 +140,7 @@ if has("gui_running")
   set guioptions-=m "remove menu
   set t_Co=256
   set cursorline " highlight current line
+  " set gfn=Menlo:h16
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -179,7 +178,7 @@ endif
 " Use system clipboard
 set clipboard=unnamed
 
-set rtp+=/usr/local/Cellar/fzf/0.9.1
+set rtp+=/usr/local/Cellar/fzf/0.9.3
 " autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
 " autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 " autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
