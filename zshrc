@@ -29,13 +29,20 @@ EOBUNDLES
 
 antigen apply
 
-# ZSH Theme - Preview: http://cl.ly/350F0F0k1M2y3A2i3p1S
+###############
+#    THEME    #
+###############
+
 # add git_super_status from zsh-git-prompt
 PROMPT='-> %~/ %{$reset_color%}
 [λ $(hostname)] $(git_super_status)'
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
-###############################
+
+
+###############
+#    ALIAS    #
+###############
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -47,6 +54,10 @@ alias start_psql="pg_ctl -D /usr/local/var/postgres start"
 alias start_memcached="memcached -d"
 alias start_mysql="mysql.server start"
 
+
+###############
+#   GENERAL   #
+###############
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -64,7 +75,9 @@ alias start_mysql="mysql.server start"
 
 export EDITOR=/usr/local/bin/vim
 
-# ---- Set Path ----
+###############
+#    PATH     #
+###############
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
@@ -78,6 +91,19 @@ export PYLEARN2_DATA_PATH=~/Research/pl_data
 
 # Android SDK
 export PATH=${PATH}:~/Library/Android/sdk/platform-tools:~/Library/Android/sdk/tools
+
+###############
+#     FZF     #
+###############
+
+# Setting ag as the default source for fzf
+export FZF_DEFAULT_COMMAND='ag -l -g ""'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+###############
+#    LPASS    #
+###############
 
 # LastPass Alfred Workflow
 # https://github.com/bachya/lp-vault-manager#preventing-future-master-login-requests

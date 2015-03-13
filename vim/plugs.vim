@@ -79,6 +79,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'justinmk/vim-sneak'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/limelight.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'lazywei/YankRing.vim'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'mattn/webapi-vim'
