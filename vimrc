@@ -3,8 +3,8 @@
 set nocompatible
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Maintainer: Bert
-"             lazywei AT github
+" Maintainer: Chih-Wei (Bert) Chang
+"             @lazywei on GitHub
 " Sections:
 "    -> General Settings
 "    -> VIM user interface
@@ -39,10 +39,8 @@ nnoremap : ;
 vnoremap ; :
 vnoremap : ;
 
-" Vundle
-" if filereadable(expand("~/.vim/vundles.vim"))
-"   source ~/.vim/vundles.vim
-" endif
+" We use vim-plug as plugin manager, and we put the plugin list in a separated
+" files.
 if filereadable(expand("~/.vim/plugs.vim"))
   source ~/.vim/plugs.vim
 endif
@@ -61,6 +59,8 @@ set cino=b1,g0,N-s,t0,(0,W4    " see :h cinoptions-values
 " The "longest" option makes completion insert the longest prefix of all
 " the possible matches; see :h completeopt
 set completeopt=menu,menuone,longest
+
+set colorcolumn=81             " Show a vertical line at 81-th character position
 
 set copyindent                 " copy the previous indentation on autoindenting
 set encoding=utf8
@@ -177,7 +177,3 @@ endif
 
 " Use system clipboard
 set clipboard=unnamed
-
-" autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1 
-" autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-" autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
