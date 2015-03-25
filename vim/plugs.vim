@@ -12,7 +12,8 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'justinj/vim-react-snippets'
 Plug 'kchmck/vim-coffee-script'
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
-Plug 'mxw/vim-jsx'
+" Plug 'mxw/vim-jsx'
+Plug 'othree/vim-jsx'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'othree/yajs.vim'
 Plug 'pangloss/vim-javascript'
@@ -50,9 +51,11 @@ Plug 'cespare/vim-toml'
 Plug 'lazywei/vim-swig'
 
 " Git related...
+Plug 'chrisbra/vim-diff-enhanced'
 Plug 'mattn/gist-vim'
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
+Plug 'idanarye/vim-merginal'
 
 " Code completion
 " See: https://github.com/junegunn/vim-plug/wiki/faq#loading-plugins-manually
@@ -76,7 +79,7 @@ Plug 'jingweno/vimux-zeus'
 " General improvements...
 Plug 'editorconfig/editorconfig-vim'
 " Plug 'techlivezheng/vim-plugin-minibufexpl'
-Plug 'justinmk/vim-sneak'
+" Plug 'justinmk/vim-sneak'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }

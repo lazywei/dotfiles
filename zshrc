@@ -4,6 +4,7 @@ antigen use oh-my-zsh
 
 antigen bundles <<EOBUNDLES
 git
+git-flow-avh
 heroku
 pip
 command-not-found
@@ -18,8 +19,9 @@ osx
 terminalapp
 
 zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-completions
 
-olivierverdier/zsh-git-prompt
+# olivierverdier/zsh-git-prompt
 EOBUNDLES
 
 # antigen theme robbyrussell
@@ -30,15 +32,23 @@ EOBUNDLES
 antigen apply
 
 ###############
-#    THEME    #
+#    PROMT    #
 ###############
 
-# add git_super_status from zsh-git-prompt
-PROMPT='-> %~/ %{$reset_color%}
-[λ $(hostname)] $(git_super_status)'
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
+function git_prompt() {
+  if [[ "$(command git config --get oh-my-zsh.hide-status 2>/dev/null)" != "1" ]]; then
+    ref=$(command git symbolic-ref HEAD 2> /dev/null) || \
+    ref=$(command git rev-parse --short HEAD 2> /dev/null) || return 0
+    echo "[%{$FG[012]%}${ref#refs/heads/}%{$reset_color%}-%{$fg[yellow]%}$(git_prompt_short_sha)%{$reset_color%}]$(parse_git_dirty)"
+  fi
+}
 
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}✗ %{$reset_color%}"
+ZSH_THEME_GIT_PROMPT_CLEAN=" "
+
+# add git_super_status from zsh-git-prompt
+PROMPT='->[$(hostname)] %~/ %{$reset_color%}
+λ $(git_prompt)'
 
 ###############
 #    ALIAS    #
@@ -75,6 +85,8 @@ alias start_mysql="mysql.server start"
 
 export EDITOR=/usr/local/bin/vim
 
+set -o vi
+
 ###############
 #    PATH     #
 ###############
@@ -99,7 +111,7 @@ export PATH=${PATH}:~/Library/Android/sdk/platform-tools:~/Library/Android/sdk/t
 # Setting ag as the default source for fzf
 export FZF_DEFAULT_COMMAND='ag -l -g ""'
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 ###############
 #    LPASS    #
@@ -108,3 +120,6 @@ export FZF_DEFAULT_COMMAND='ag -l -g ""'
 # LastPass Alfred Workflow
 # https://github.com/bachya/lp-vault-manager#preventing-future-master-login-requests
 export LPASS_AGENT_TIMEOUT=0
+
+PERL_MB_OPT="--install_base \"/Users/lazywei/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/lazywei/perl5"; export PERL_MM_OPT;

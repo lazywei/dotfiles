@@ -25,6 +25,7 @@ git config --global alias.dst "diff --staged"
 git config --global alias.dc "!git diff | cdiff -s"
 git config --global alias.dcs "!git diff --staged | cdiff -s"
 git config --global alias.cp "cherry-pick"
+git config --global core.preloadindex true
 
 git config --global alias.lg "log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 
@@ -46,7 +47,8 @@ git config --global pull.rebase true
 
 # This makes sure that push pushes only the current branch, and pushes it to the
 # same branch pull would pull from
-#git config --global push.default upstream
+# git config --global push.default upstream
+git config --global push.default simple
 
 # This converts CRLF endings to LF endings on Mac & Lin and also keeps them in
 # the repo, but for Windows checkouts it converts LF to CRLF (and back to LF on
