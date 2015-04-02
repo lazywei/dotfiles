@@ -7,6 +7,7 @@ Plug 'Keithbsmiley/rspec.vim'
 Plug 'thoughtbot/vim-rspec'
 Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
+Plug 'skalnik/vim-vroom'
 
 " Javascript...
 Plug 'justinj/vim-react-snippets'
