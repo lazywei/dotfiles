@@ -1,4 +1,14 @@
 .DS_Store
 vim/tmp
-
 vim/.netrwhist
+vim/undodir/*
+vim/Session.vim
+vim/bundle/
+vim/plugged/
+
+nvim/tmp
+nvim/.netrwhist
+nvim/undodir/*
+nvim/Session.vim
+nvim/bundle/
+nvim/plugged/
