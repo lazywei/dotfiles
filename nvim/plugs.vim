@@ -78,15 +78,16 @@ Plug 'benmills/vimux'
 Plug 'jingweno/vimux-zeus'
 
 " General improvements...
-Plug 'editorconfig/editorconfig-vim'
+Plug 'editorconfig/editorconfig-vim', { 'on': 'EditorConfigReload' }
 " Plug 'techlivezheng/vim-plugin-minibufexpl'
 " Plug 'justinmk/vim-sneak'
 Plug 'justinmk/vim-gtfo'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/limelight.vim'
+Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'junegunn/vim-peekaboo'
-" Plug 'lazywei/YankRing.vim'
+Plug 'lazywei/YankRing.vim'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'mattn/webapi-vim'
 Plug 'nathanaelkane/vim-indent-guides'

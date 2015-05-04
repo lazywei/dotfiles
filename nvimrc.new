@@ -1,4 +1,5 @@
 " vim: set foldmethod=marker foldlevel=0:
+
 " ============================================================================
 " .vimrc of Chih-Wei Chang {{{
 " ============================================================================
@@ -12,6 +13,8 @@ augroup vimrc
 augroup END
 
 " }}}
+" ============================================================================
+
 " ============================================================================
 " VIM-PLUG BLOCK {{{
 " ============================================================================
@@ -169,6 +172,7 @@ Plug 'lazywei/vim-sourcegraph'
 call plug#end()
 endif
 " }}}
+" ============================================================================
 
 " ============================================================================
 " BASIC SETTINGS {{{
@@ -189,7 +193,7 @@ vnoremap : ;
 
 syntax enable
 
-" DISPLAY SETTINGS
+" DISPLAY SETTINGS {{{ 1
 colorscheme seoul256
 set nu
 set scrolloff=2         " 2 lines above/below cursor when scrolling
@@ -217,8 +221,9 @@ set list listchars=tab:\|\ ,trail:·
 set completeopt=menu,menuone,longest
 set switchbuf=useopen,usetab
 
+" }}} 1
 
-" EDITOR SETTINGS
+" EDITOR SETTINGS {{{ 2
 set ignorecase          " case insensitive searching
 set smartcase           " but become case sensitive if you type uppercase characters
 " this can cause problems with other filetypes
@@ -246,7 +251,9 @@ set virtualedit=block
 
 set encoding=utf-8
 
-" MISC SETTINGS
+" }}} 2
+
+" MISC SETTINGS {{{ 3
 set fileformat=unix     " file mode is unix
 set fileformats=unix,dos,mac   " detects unix, dos, mac file formats in that order
 
@@ -311,9 +318,51 @@ set nowb                       " Prevents automatic write backup before overwrit
 " Keep the cursor on the same column
 set nostartofline
 
+" }}} 3
+
 " }}}
+" ============================================================================
 
 " ============================================================================
-" BASIC SETTINGS {{{
+" MORE INVOVLED SETTINGS {{{
+" ============================================================================
+
+" Unicode support (taken from http://vim.wikia.com/wiki/Working_with_Unicode)
+if has("multi_byte")
+  if &termencoding == ""
+    let &termencoding = &encoding
+  endif
+  set encoding=utf-8
+  setglobal fileencoding=utf-8
+  set fileencodings=ucs-bom,utf-8,latin1
+endif
+
+augroup vimrc
+  autocmd FileType text,markdown,gitcommit set nocindent
+  " Auto turn on spell check for markdown file, gitcommit
+  autocmd FileType markdown setlocal spell! spelllang=en_us
+  autocmd FileType gitcommit setlocal spell! spelllang=en_us
+augroup END
+
+try
+  lang zh_TW
+catch
+endtry
+
+" Go back to the location last time edited when open files.
+if has("autocmd")
+  autocmd vimrc BufRead *.txt set tw=78
+  autocmd vimrc BufReadPost *
+        \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+        \   exe "normal g'\"" |
+        \ endif
+endif
+
+" }}}
+" ============================================================================
+
+" ============================================================================
+" BLOCK SAMPLE {{{
 " ============================================================================
 " }}}
+" ============================================================================
