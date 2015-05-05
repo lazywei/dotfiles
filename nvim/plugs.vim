@@ -57,6 +57,7 @@ Plug 'mattn/gist-vim'
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 Plug 'idanarye/vim-merginal'
+" Plug 'jaxbot/github-issues.vim'
 
 " Code completion
 " See: https://github.com/junegunn/vim-plug/wiki/faq#loading-plugins-manually
