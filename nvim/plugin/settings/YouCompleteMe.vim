@@ -5,7 +5,7 @@ let g:ycm_confirm_extra_conf = 0
 
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 
-let g:ycm_path_to_python_interpreter = '/usr/local/bin/python'
+let g:ycm_path_to_python_interpreter = '/Users/lazywei/.pyenv/shims/python'
 " nnoremap <leader>y :YcmForceCompileAndDiagnostics<cr>
 " nnoremap <leader>pg :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " nnoremap <leader>pd :YcmCompleter GoToDefinition<CR>

@@ -14,7 +14,6 @@ Plug 'justinj/vim-react-snippets'
 Plug 'kchmck/vim-coffee-script'
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 " Plug 'mxw/vim-jsx'
-" Plug 'othree/vim-jsx'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'othree/yajs.vim'
 Plug 'pangloss/vim-javascript'
@@ -61,18 +60,19 @@ Plug 'idanarye/vim-merginal'
 
 " Code completion
 " See: https://github.com/junegunn/vim-plug/wiki/faq#loading-plugins-manually
-Plug 'Valloric/YouCompleteMe', { 'on': [], 'do': './install.sh --clang-completer --gocode-completer' }
-Plug 'SirVer/ultisnips', { 'on': [] }
-Plug 'honza/vim-snippets', { 'on': [] }
-augroup load_us_ycm
-  autocmd!
-  autocmd InsertEnter * call plug#load('ultisnips', 'vim-snippets', 'YouCompleteMe')
-                     \| call youcompleteme#Enable() | autocmd! load_us_ycm
-augroup END
+" Plug 'Valloric/YouCompleteMe', { 'on': [], 'do': './install.sh --clang-completer --gocode-completer' }
+Plug 'Shougo/neocomplcache.vim'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+" augroup load_us_ycm
+"   autocmd!
+"   autocmd InsertEnter * call plug#load('ultisnips', 'vim-snippets', 'neocomplcache.vim')
+"                      " \| call youcompleteme#Enable() | autocmd! load_us_ycm
+" augroup END
 
 " Unite...
 " vimproc need manually build
-Plug 'Shougo/vimproc.vim'
+Plug 'Shougo/vimproc.vim', { 'do': 'make -f make_mac.mak' }
 
 " Tmux...
 Plug 'benmills/vimux'
@@ -91,6 +91,7 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'lazywei/YankRing.vim'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'mattn/webapi-vim'
+Plug 'mhinz/vim-startify'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'osyo-manga/vim-over', { 'on':  'OverCommandLine' }
