@@ -216,8 +216,6 @@ set hidden
 "turn on syntax highlighting
 syntax enable
 
-set undolevels=1000     " use many levels of undo
-
 set foldmethod=indent   "fold based on indent
 set foldlevelstart=99   "all folds open by default
 
@@ -226,26 +224,23 @@ set laststatus=2        " the statusline is now always shown
 set virtualedit=block
 set encoding=utf-8
 
-" }}} 1
+" }}}
 
 " TURN OFF SWAP FILES {{{
 
-set noswapfile
-set nobackup
-set nowb
+" set noswapfile
+" set nobackup
+" set nowb
 
-" }}} 3
-
-" PERSISTENT UNDO {{{
 " Keep undo history across sessions, by storing in file.
 " Only works all the time.
-if has('persistent_undo')
-  silent !mkdir ~/.vim/backups > /dev/null 2>&1
-  set undodir=~/.vim/backups
-  set undofile
-endif
+" if has('persistent_undo')
+"   silent !mkdir ~/.vim/backups > /dev/null 2>&1
+"   set undodir=~/.vim/backups
+"   set undofile
+" endif
 
-" }}} 3
+" }}}
 
 " INDENTATION {{{
 

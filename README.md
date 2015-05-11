@@ -1,14 +1,11 @@
-My dotfiles
+@lazywei's dotfiles
 ==========
 
-## Requirements
+## Vim
 
-- [fzf](https://github.com/junegunn/fzf)
-
-## TODO
-
-- A better requirements list
-- A better documents for settings
-- A better way to organize my scripts
-- A better way to organize fzf scripts in zshrc
-- A runnable Makefile for installation
+- Use [NeoVim](https://github.com/neovim/neovim)
+- Use [vim-plug](https://github.com/junegunn/vim-plug)
+- Configurations are heavily inspired by
+  - [@junegunn](https://github.com/junegunn/dotfiles/blob/master/vimrc)
+  - [@Valloric](https://github.com/Valloric/dotfiles/blob/master/vim/vimrc.vim)
+  - [@joedicastro](https://github.com/joedicastro/dotfiles/blob/master/vim/vimrc)
