@@ -5,7 +5,9 @@ let maplocalleader= ' '
 map 0 ^
 noremap ,. :noh<cr>
 
-nnoremap <leader>w :w!<cr>
+" inoremap <D-s>     <C-O>:update<cr>
+" nnoremap <D-s>     :update<cr>
+nnoremap <leader>w :update<cr>
 
 " Fast editing of the .vimrc
 noremap <leader>v :e ~/.vimrc<CR>
@@ -100,6 +102,7 @@ inoremap ,q ''<esc>i
 inoremap ,e ""<esc>i
 inoremap ,t <><esc>i
 
+inoremap <C-k> _
 
 " Fast jump to the end of line in insert mode
 " inoremap <leader>A <esc>A

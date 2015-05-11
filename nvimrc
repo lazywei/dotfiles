@@ -15,6 +15,8 @@ augroup vimrc
   autocmd!
 augroup END
 
+" let g:python_host_skip_check = 1
+
 " }}}
 " ============================================================================
 
@@ -124,9 +126,9 @@ Plug 'mattn/webapi-vim'
 Plug 'mhinz/vim-startify'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'nelstrom/vim-visual-star-search'
-Plug 'osyo-manga/vim-over', { 'on':  'OverCommandLine' }
+Plug 'osyo-manga/vim-over', { 'on': 'OverCommandLine' }
 Plug 'rking/ag.vim'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'scrooloose/syntastic'
 Plug 'szw/vim-ctrlspace'
 Plug 'terryma/vim-multiple-cursors'
@@ -377,6 +379,17 @@ if has("autocmd")
         \   exe "normal g'\"" |
         \ endif
 endif
+
+" }}}
+" ============================================================================
+
+" ============================================================================
+" CUSTOME SETTINGS {{{
+" ============================================================================
+
+for fpath in split(globpath("~/.nvim/settings", '*.vim'), '\n')
+  exe 'source' fpath
+endfor
 
 " }}}
 " ============================================================================
