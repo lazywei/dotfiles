@@ -15,8 +15,10 @@ noremap <silent> <leader>V :source $MYVIMRC<CR>:filetype detect<CR>:exe ":echo '
 map j gj
 map k gk
 
-" Map space to / (search) and c-space to ? (backgwards search)
-map <space> /\v
+" this makes vim's regex engine "not stupid"
+" see :h magic
+nnoremap / /\v
+vnoremap / /\v
 
 " Indent
 nmap <tab> v>
@@ -100,7 +102,7 @@ inoremap ,t <><esc>i
 
 
 " Fast jump to the end of line in insert mode
-inoremap <leader>A <esc>A
+" inoremap <leader>A <esc>A
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Visual mode

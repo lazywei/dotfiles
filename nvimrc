@@ -24,11 +24,11 @@ augroup END
 
 silent! if plug#begin('~/.nvim/plugged')
 
-if s:darwin
-  let g:plug_url_format = 'git@github.com:%s.git'
-else
-  let $GIT_SSL_NO_VERIFY = 'true'
-endif
+" if s:darwin
+"   let g:plug_url_format = 'git@github.com:%s.git'
+" else
+"   let $GIT_SSL_NO_VERIFY = 'true'
+" endif
 
 " Ruby, Rails, Rake...
 " by default this syntax is used with all *_spec.rb
