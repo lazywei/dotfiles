@@ -67,6 +67,7 @@ Plug 'tyru/open-browser.vim'
 
 " Go...
 Plug 'fatih/vim-go'
+Plug 'gevans/vim-ginkgo'
 
 " Latex
 Plug 'gerw/vim-latex-suite'
@@ -127,7 +128,8 @@ Plug 'mhinz/vim-startify'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'osyo-manga/vim-over', { 'on': 'OverCommandLine' }
-Plug 'rking/ag.vim'
+" Plug 'rking/ag.vim'
+Plug 'dyng/ctrlsf.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'scrooloose/syntastic'
 Plug 'szw/vim-ctrlspace'
