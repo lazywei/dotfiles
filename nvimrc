@@ -165,6 +165,7 @@ Plug 'junegunn/seoul256.vim'
 " Plug 'Valloric/vim-valloric-colorscheme'
 " Plug 'nanotech/jellybeans.vim'
 Plug 'jaxbot/semantic-highlight.vim'
+Plug 'gmoe/vim-espresso'
 
 
 " Tags...
@@ -367,11 +368,6 @@ augroup vimrc
   autocmd FileType markdown setlocal spell! spelllang=en_us
   autocmd FileType gitcommit setlocal spell! spelllang=en_us
 augroup END
-
-try
-  lang zh_TW
-catch
-endtry
 
 " Go back to the location last time edited when open files.
 if has("autocmd")
