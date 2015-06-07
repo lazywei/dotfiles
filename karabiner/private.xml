@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<root>
+  <appdef>
+    <appname>Welly</appname>
+    <!--
+        Please modify bundle identifier for your environment.
+        You can confirm it by EventViewer.
+        https://pqrs.org/osx/karabiner/xml.html.en#appdef-steps
+    -->
+    <equal>org.net9.Welly</equal>
+  </appdef>
+  <appdef>
+    <appname>Firefox</appname>
+    <equal>org.mozilla.firefox</equal>
+  </appdef>
+
+  <item>
+    <name>Disable all settings while you are using Welly.</name>
+    <identifier>private.ignore_Welly</identifier>
+    <only>Welly</only>
+    <autogen>__PassThrough__</autogen>
+  </item>
+
+  <item>
+    <name>Remap firefox</name>
+    <identifier>private.firefox_remap</identifier>
+    <only>Firefox</only>
+    <autogen>
+      __KeyToKey__
+      KeyCode::RETURN, ModifierFlag::COMMAND_L,
+      KeyCode::RETURN, ModifierFlag::OPTION_L,
+    </autogen>
+  </item>
+</root>

@@ -8,6 +8,8 @@ COMMAND="ssh $1 -f -N -o ControlMaster=auto -o ControlPath=/tmp/%r@%h:%p"
 echo "opening ssh tunnel.."
 $COMMAND || exit $?
 echo "ssh tunnel active, opening vim.."
+echo $1
+echo $2
 vim scp://$1$2
 echo "closing ssh tunnel.."
 ps -ef | grep "$COMMAND" | grep -v grep | awk '{print $2}' | xargs kill -9

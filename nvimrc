@@ -16,6 +16,7 @@ augroup vimrc
 augroup END
 
 " let g:python_host_skip_check = 1
+" let g:python3_host_skip_check = 1
 
 " }}}
 " ============================================================================
@@ -73,8 +74,8 @@ Plug 'gevans/vim-ginkgo'
 Plug 'gerw/vim-latex-suite'
 
 " Python
-Plug 'ivanov/vim-ipython'
-Plug 'klen/python-mode'
+Plug 'ivanov/vim-ipython', { 'for': ['python'] }
+Plug 'klen/python-mode', { 'for': ['python'] }
 
 " Other languages...
 Plug 'lazywei/vim-matlab'
@@ -95,7 +96,8 @@ Plug 'idanarye/vim-merginal'
 " See: https://github.com/junegunn/vim-plug/wiki/faq#loading-plugins-manually
 " Plug 'Valloric/YouCompleteMe', { 'on': [], 'do': './install.sh --clang-completer --gocode-completer' }
 Plug 'Shougo/neocomplcache.vim'
-Plug 'SirVer/ultisnips'
+" Plug 'SirVer/ultisnips'
+Plug 'Shougo/neosnippet.vim'
 Plug 'honza/vim-snippets'
 " augroup load_us_ycm
 "   autocmd!
@@ -142,7 +144,8 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-vinegar'
-Plug 'Valloric/MatchTagAlways'
+Plug 'eiginn/netrw'
+" Plug 'Valloric/MatchTagAlways'
 Plug 'vim-scripts/matchit.zip'
 Plug 'vim-scripts/VisIncr'
 " Find out where maps are defined
@@ -202,6 +205,7 @@ vnoremap : ;
 " GENERAL SETTINGS {{{
 
 colorscheme seoul256
+" colorscheme espresso
 
 set cursorline                  "Highlights the current line
 set number                      "Line numbers are good
