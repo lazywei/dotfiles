@@ -124,7 +124,7 @@ Plug 'junegunn/goyo.vim', { 'on': 'Goyo' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'junegunn/vim-peekaboo'
 Plug 'lazywei/YankRing.vim'
-Plug 'Lokaltog/vim-easymotion'
+Plug 'easymotion/vim-easymotion'
 Plug 'mattn/webapi-vim'
 Plug 'mhinz/vim-startify'
 Plug 'nathanaelkane/vim-indent-guides'
