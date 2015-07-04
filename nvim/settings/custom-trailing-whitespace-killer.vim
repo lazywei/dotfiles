@@ -12,4 +12,4 @@ function! <SID>StripTrailingWhitespaces()
     call cursor(l, c)
 endfunction
 command! StripTrailingWhitespaces call <SID>StripTrailingWhitespaces()
-nnoremap <leader><space> :StripTrailingWhitespaces<CR>
+nnoremap <leader>sw :StripTrailingWhitespaces<CR>

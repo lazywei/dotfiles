@@ -13,9 +13,9 @@ let g:neocomplcache_enable_fuzzy_completion = 1
 
 " Enable heavy features.
 " Use camel case completion.
-"let g:neocomplcache_enable_camel_case_completion = 1
+" let g:neocomplcache_enable_camel_case_completion = 1
 " Use underbar completion.
-"let g:neocomplcache_enable_underbar_completion = 1
+" let g:neocomplcache_enable_underbar_completion = 1
 
 " Define dictionary.
 " let g:neocomplcache_dictionary_filetype_lists = {
@@ -63,7 +63,7 @@ inoremap <expr><C-e>  neocomplcache#cancel_popup()
 "let g:neocomplcache_enable_insert_char_pre = 1
 
 " AutoComplPop like behavior.
-"let g:neocomplcache_enable_auto_select = 1
+" let g:neocomplcache_enable_auto_select = 1
 
 " Shell like behavior(not recommended).
 "set completeopt+=longest
@@ -89,3 +89,8 @@ let g:neocomplcache_force_omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\
 " For perlomni.vim setting.
 " https://github.com/c9s/perlomni.vim
 let g:neocomplcache_force_omni_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+
+if !exists('g:neocomplcache_omni_patterns')
+  let g:neocomplcache_omni_patterns = {}
+endif
+let g:neocomplcache_omni_patterns.go = '\h\w*\.\?'
