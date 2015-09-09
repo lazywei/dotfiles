@@ -109,10 +109,10 @@ Plug 'honza/vim-snippets'
 " Unite...
 " vimproc need manually build
 Plug 'Shougo/vimproc.vim', { 'do': 'make -f make_mac.mak' }
+Plug 'Shougo/unite.vim'
 
 " Tmux...
 Plug 'benmills/vimux'
-Plug 'jingweno/vimux-zeus'
 
 " General improvements...
 Plug 'editorconfig/editorconfig-vim', { 'on': 'EditorConfigReload' }
@@ -143,8 +143,8 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sleuth'
-Plug 'tpope/vim-vinegar'
-Plug 'eiginn/netrw'
+" Plug 'tpope/vim-vinegar'
+" Plug 'eiginn/netrw'
 " Plug 'Valloric/MatchTagAlways'
 Plug 'vim-scripts/matchit.zip'
 Plug 'vim-scripts/VisIncr'
@@ -232,6 +232,9 @@ set nojoinspaces
 set laststatus=2        " the statusline is now always shown
 set virtualedit=block
 set encoding=utf-8
+
+" Turn off preview window for auto completion such as neocomplcache
+set completeopt-=preview
 
 " }}}
 

@@ -31,4 +31,32 @@
       KeyCode::RETURN, ModifierFlag::OPTION_L,
     </autogen>
   </item>
+
+  <!-- <item> -->
+  <!--   <name>Defocus Chrome's Stupid Omnibox</name> -->
+  <!--   <vkopenurldef> -->
+  <!--     <name>KeyCode::VK_OPEN_URL_SHELL_mousetowindowcenter</name> -->
+  <!--     <url type="shell"> -->
+  <!--       <![CDATA[ -->
+  <!--                /Applications/Karabiner.app/Contents/Library/utilities/bin/warp-mouse-cursor-position screen 0 bottom -500 right -500 -->
+  <!--       ]]> -->
+  <!--     </url> -->
+  <!--   </vkopenurldef> -->
+  <!--   <item> -->
+  <!--     <identifier>private.defocus_chrome_omnibox</identifier> -->
+  <!--     <name>A+K to leave chrome omnibox</name> -->
+  <!--     <autogen> -->
+  <!--       __SimultaneousKeyPresses__ -->
+  <!--       @begin -->
+  <!--         KeyCode::A, KeyCode::K, -->
+  <!--       @end -->
+  <!--       @begin -->
+  <!--         KeyCode::VK_OPEN_URL_SHELL_mousetowindowcenter, -->
+  <!--         KeyCode::VK_WAIT_50MS, -->
+  <!--         PointingButton::LEFT, -->
+  <!--         KeyCode::ESCAPE, -->
+  <!--       @end -->
+  <!--     </autogen> -->
+  <!--   </item> -->
+  <!-- </item> -->
 </root>
