@@ -2,18 +2,20 @@ cask_args appdir: '/Applications'
 
 tap 'caskroom/cask'
 tap 'homebrew/bundle'
+tap 'railwaycat/homebrew-emacsmacport'
+
 
 brew 'coreutils'
 brew 'zsh'
 brew 'wget'
 brew 'libgit2'
+brew 'grc'
+brew 'emacs-mac', args: ['with-spacemacs-icon']
 
 # brew 'go'
-# brew 'grc'
 # brew 'imagemagick'
 # brew 'jp2a'
 # brew 'libcaca', args: ['with-imlib2']
-# brew 'libgit2'
 # brew 'openssl'
 # brew 'node'
 # brew 'readline'
@@ -24,9 +26,8 @@ brew 'libgit2'
 # brew 'spaceman-diff'
 # brew 'spark'
 # brew 'unrar'
-# brew 'wget'
 # brew 'youtube-dl'
-# 
+
 # cask '1password'
 # cask 'adium'
 # cask 'atom'

@@ -54,6 +54,15 @@ There's a few special files in the hierarchy.
 
 ## Spacemacs
 
+1. Emacs and Spacemacs (`.emacs.d`) will be installed through `script/bootstrap`.
+2. Use develop branch for spacemacs
+    
+  ```sh
+  cd ~/.emacs.d
+  git checkout -b develop origin/develop
+  emacs # this will install packages automatically
+  ```
+
 
 
 ## Shell
