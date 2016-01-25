@@ -5,11 +5,14 @@ This repo is based on [@holman](https://github.com/holman/dotfiles)'s dotfiles. 
 
 ## Install
 
-```sh
-git clone https://github.com/lazywei/dotfiles.git
-cd ~/dotfiles
-script/bootstrap
-```
+1. Check this README if anything needed to be installed manually.
+2. Run the script
+    
+  ```sh
+  git clone https://github.com/lazywei/dotfiles.git
+  cd ~/dotfiles
+  script/bootstrap
+  ```
 
 #### What `script/bootstrap` does
 
@@ -59,11 +62,13 @@ There's a few special files in the hierarchy.
 2. Configure `zim/zimrc.symlink` and `zsh/zshrc.symlink` (if possible, add configuration to the former one).
 
 
-## Global Key Remapping -- Karabiner
+## Karabiner [Manually Install Required]
+
+Global Key Remapping.
 
 1. Install the app manually: [Karabiner](https://pqrs.org/osx/karabiner/index.html.en).
 
-## Vim (seldom use)
+## Vim
 
 - Use [NeoVim](https://github.com/neovim/neovim)
 - Use [vim-plug](https://github.com/junegunn/vim-plug)
