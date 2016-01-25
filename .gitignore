@@ -1,14 +1,8 @@
-.DS_Store
-vim/tmp
-vim/.netrwhist
-vim/undodir/*
-vim/Session.vim
-vim/bundle/
-vim/plugged/
+neovim/nvim/tmp
+neovim/nvim/.netrwhist
+neovim/nvim/undodir/*
+neovim/nvim/Session.vim
+neovim/nvim/bundle/
+neovim/nvim/plugged/
 
-nvim/tmp
-nvim/.netrwhist
-nvim/undodir/*
-nvim/Session.vim
-nvim/bundle/
-nvim/plugged/
+git/gitconfig.symlink

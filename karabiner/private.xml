@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
 <root>
+  <!-- DEF START -->
+
   <appdef>
     <appname>Welly</appname>
     <!--
@@ -9,10 +11,19 @@
     -->
     <equal>org.net9.Welly</equal>
   </appdef>
+
   <appdef>
     <appname>Firefox</appname>
     <equal>org.mozilla.firefox</equal>
   </appdef>
+
+  
+  <devicevendordef>
+    <vendorname>QK_KEYBOARD</vendorname>
+    <vendorid>0x2516</vendorid>
+  </devicevendordef>
+
+  <!-- DEF END -->
 
   <item>
     <name>Disable all settings while you are using Welly.</name>
@@ -30,6 +41,14 @@
       KeyCode::RETURN, ModifierFlag::COMMAND_L,
       KeyCode::RETURN, ModifierFlag::OPTION_L,
     </autogen>
+  </item>
+
+  <item>
+    <name>Switch Quickfire's Right CMD and Option</name>
+    <identifier>private.quickfire_switch</identifier>
+    <device_only>DeviceVendor::QK_KEYBOARD</device_only>
+    <autogen> __KeyToKey__ KeyCode::COMMAND_R, KeyCode::OPTION_R </autogen>
+    <autogen> __KeyToKey__ KeyCode::OPTION_R, KeyCode::COMMAND_R </autogen>
   </item>
 
   <!-- <item> -->
