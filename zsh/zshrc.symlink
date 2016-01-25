@@ -1,5 +1,5 @@
 # My debug logging function
-DEBUG=true # turn this to false to supress the logging
+DEBUG=false # turn this to false to supress the logging
 debug_log () {
   if $DEBUG; then
     echo $1
