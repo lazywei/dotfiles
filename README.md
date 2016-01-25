@@ -3,9 +3,7 @@
 
 This repo is based on [@holman](https://github.com/holman/dotfiles)'s dotfiles. For the original and complete instruction, please refer to holman's repo.
 
-## install
-
-Run this:
+## Install
 
 ```sh
 git clone https://github.com/lazywei/dotfiles.git
@@ -13,18 +11,27 @@ cd ~/dotfiles
 script/bootstrap
 ```
 
-This will symlink the appropriate files in `dotfiles` to your home directory.
-Everything is configured and tweaked within `~/dotfiles`.
+### What `script/bootstrap` does
 
-The main file you'll want to change right off the bat is `zsh/zshrc.symlink`,
-which sets up a few paths that'll be different on your particular machine.
+1. Setup gitconfig if not exist.
+2. Create symlink for dot files.
+3. Run `bin/dot`. 
 
-`dot` is a simple script that installs some dependencies, sets sane OS X
-defaults, and so on. Tweak this script, and occasionally run `dot` from
-time to time to keep your environment fresh and up-to-date. You can find
-this script in `bin/`.
+### What `bin/dot` does
 
-## components
+1. Install Homebrew if not exist.
+2. Update Homebrew formulas.
+3. Run `script/install`
+4. Backup Karabiner's profile.
+
+This script is expected to be executed occasionally from time to time to keep the environment fresh and up-to-date.
+
+### What `script/install` does
+
+1. Run `brew bundle` to install Homebrew formulas.
+2. Run all `install.sh` for each topic.
+
+## Components
 
 There's a few special files in the hierarchy.
 
@@ -42,7 +49,21 @@ There's a few special files in the hierarchy.
   but still keep those autoloaded files in your home directory. These get
   symlinked in when you run `script/bootstrap`.
 
-## Vim
+## Spacemacs
+
+
+
+## Shell
+
+1. Zsh and Zim will be installed through `script/bootstrap` -> `bin/dot` -> `script/install`.
+2. Configure `zim/zimrc.symlink` and `zsh/zshrc.symlink` (if possible, add configuration to the former one).
+
+
+## Global Key Remapping -- Karabiner
+
+1. Install the app manually: [Karabiner](https://pqrs.org/osx/karabiner/index.html.en).
+
+## Vim (selfom use)
 
 - Use [NeoVim](https://github.com/neovim/neovim)
 - Use [vim-plug](https://github.com/junegunn/vim-plug)
@@ -52,25 +73,9 @@ There's a few special files in the hierarchy.
   - [@skwp's YADR](https://github.com/skwp/dotfiles/blob/master/vimrc)
   - [@joedicastro](https://github.com/joedicastro/dotfiles/blob/master/vim/vimrc)
 
-## Shell
 
-- zsh
-- prezto
+==========
 
-  ```
-  .zlogin -> /Users/lazywei/.zprezto/runcoms/zlogin
-  .zlogout -> /Users/lazywei/.zprezto/runcoms/zlogout
-  .zprezto -> /Users/lazywei/dotfiles/prezto
-  .zpreztorc -> /Users/lazywei/.zprezto/runcoms/zpreztorc
-  .zprofile -> /Users/lazywei/.zprezto/runcoms/zprofile
-  .zshenv -> /Users/lazywei/.zprezto/runcoms/zshenv
-  .zshrc -> /Users/lazywei/.zprezto/runcoms/zshrc
-  ```
+## Code Style
 
-## Global Key Remapping -- Karabiner
-
-####[Karabiner](https://pqrs.org/osx/karabiner/index.html.en)
-```
-cd ~/Library/Application\ Support/Karabiner
-ln -s ~/dotfiles/karabiner/private.xml ./
-```
+1. Use ">> ..." prefix for echoing message every topic's `install.sh`.
