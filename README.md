@@ -11,13 +11,13 @@ cd ~/dotfiles
 script/bootstrap
 ```
 
-### What `script/bootstrap` does
+#### What `script/bootstrap` does
 
 1. Setup gitconfig if not exist.
 2. Create symlink for dot files.
 3. Run `bin/dot`. 
 
-### What `bin/dot` does
+#### What `bin/dot` does
 
 1. Install Homebrew if not exist.
 2. Update Homebrew formulas.
@@ -26,7 +26,7 @@ script/bootstrap
 
 This script is expected to be executed occasionally from time to time to keep the environment fresh and up-to-date.
 
-### What `script/install` does
+#### What `script/install` does
 
 1. Run `brew bundle` to install Homebrew formulas.
 2. Run all `install.sh` for each topic.
@@ -63,7 +63,7 @@ There's a few special files in the hierarchy.
 
 1. Install the app manually: [Karabiner](https://pqrs.org/osx/karabiner/index.html.en).
 
-## Vim (selfom use)
+## Vim (seldom use)
 
 - Use [NeoVim](https://github.com/neovim/neovim)
 - Use [vim-plug](https://github.com/junegunn/vim-plug)
