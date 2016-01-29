@@ -38,6 +38,7 @@ values."
      ;; markdown
      ;; org
      (shell :variables
+            shell-default-shell 'eshell
             shell-default-height 30
             shell-default-position 'bottom)
      spell-checking
@@ -81,7 +82,7 @@ values."
    ;; variable is `emacs' then the `holy-mode' is enabled at startup. `hybrid'
    ;; uses emacs key bindings for vim's insert mode, but otherwise leaves evil
    ;; unchanged. (default 'vim)
-   dotspacemacs-editing-style 'hybrid
+   dotspacemacs-editing-style 'evil
    ;; If non nil output loading progress in `*Messages*' buffer. (default nil)
    dotspacemacs-verbose-loading nil
    ;; Specify the startup banner. Default value is `official', it displays
@@ -223,9 +224,19 @@ user code."
   "Configuration function for user code.
  This function is called at the very end of Spacemacs initialization after
 layers configuration. You are free to put any user code."
-  (setq
-   linum-relative-format "%3s |"
-   )
+  (setq linum-relative-format "%3s |")
+
+  ;; Define my readline style (Emacs-like) keys
+  (define-key evil-insert-state-map (kbd "C-a") 'move-beginning-of-line)
+  (define-key evil-insert-state-map (kbd "C-e") 'move-end-of-line)
+  (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
+
+  ;; Quick hide eshell
+  (add-hook 'eshell-mode-hook
+            '(lambda ()
+               (evil-define-key 'insert eshell-mode-map (kbd "C-o") 'spacemacs/default-pop-shell)
+               (evil-define-key 'normal eshell-mode-map (kbd "C-o") 'spacemacs/default-pop-shell)
+               ))
 
   ;; Wait for https://github.com/syl20bnr/spacemacs/pull/4304
   (spacemacs/set-leader-keys "SPC" 'avy-goto-word-0)
