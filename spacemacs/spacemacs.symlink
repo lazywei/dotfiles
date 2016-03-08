@@ -31,6 +31,8 @@ values."
                       auto-completion-complete-with-key-sequence "jk"
                       auto-completion-private-snippets-directory nil
                       auto-completion-enable-snippets-in-popup t
+                      auto-completion-enable-help-tooltip t
+                      auto-completion-enable-sort-by-usage t
                       )
      ;; better-defaults
      emacs-lisp
@@ -218,7 +220,16 @@ user code."
   (setq-default
    ispell-dictionary "en"
    vinegar-reuse-dired-buffer t
-   ))
+   )
+
+  (if (executable-find "trash")
+      (defun system-move-file-to-trash (file)
+        "Use `trash' to move FILE to the system trash.
+Can be installed with `brew install trash', or `brew install osxutils`''."
+        (call-process (executable-find "trash") nil 0 nil file))
+    ;; regular move to trash directory
+    (setq trash-directory "~/.Trash/emacs"))
+)
 
 (defun dotspacemacs/user-config ()
   "Configuration function for user code.
@@ -237,6 +248,9 @@ layers configuration. You are free to put any user code."
                (evil-define-key 'insert eshell-mode-map (kbd "C-o") 'spacemacs/default-pop-shell)
                (evil-define-key 'normal eshell-mode-map (kbd "C-o") 'spacemacs/default-pop-shell)
                ))
+
+  ;; Key binding for Yasnippet
+  (global-set-key (kbd "C-s") 'hippie-expand)
 
   ;; Wait for https://github.com/syl20bnr/spacemacs/pull/4304
   (spacemacs/set-leader-keys "SPC" 'avy-goto-word-0)
