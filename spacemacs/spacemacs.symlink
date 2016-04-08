@@ -20,6 +20,8 @@ values."
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
    '(
+     yaml
+     html
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
@@ -49,6 +51,8 @@ values."
      latex
      python
      markdown
+     (go :variables gofmt-command "goimports")
+     c-c++
 
      osx
      spacemacs-layouts
@@ -176,7 +180,7 @@ values."
    ;; If non nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (default nil) (Emacs 24.4+ only)
-   dotspacemacs-maximized-at-startup nil
+   dotspacemacs-maximized-at-startup t
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's active or selected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
@@ -254,6 +258,19 @@ layers configuration. You are free to put any user code."
 
   ;; Wait for https://github.com/syl20bnr/spacemacs/pull/4304
   (spacemacs/set-leader-keys "SPC" 'avy-goto-word-0)
+
+  ;; Workaround for https://github.com/syl20bnr/spacemacs/issues/3477
+  (set-face-attribute 'default nil :family "DejaVu Sans Mono for Powerline")
+  (set-face-attribute 'default nil :height 180)
+
+  (defun hexo_new (post-name)
+    (interactive "sPost Name: \n")
+    (let* ((default-directory "~/Blog/lazywei.github.io/")
+           (result (shell-command-to-string (format "~/Blog/lazywei.github.io/node_modules/.bin/hexo new \"%s\"" post-name)))
+           (file-path (substring result (string-match "~/Blog/lazywei.github.io" result) -1))
+           )
+      (find-file file-path))
+    )
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
