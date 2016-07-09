@@ -20,6 +20,7 @@ values."
    ;; of a list then all discovered layers will be installed.
    dotspacemacs-configuration-layers
    '(
+d
      yaml
      html
      ;; ----------------------------------------------------------------
@@ -62,6 +63,7 @@ values."
      unimpaired
      vim-empty-lines
      vinegar
+     dash
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -105,7 +107,8 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-dark
+   dotspacemacs-themes '(dracula
+                         spacemacs-dark
                          spacemacs-light
                          solarized-light
                          solarized-dark
@@ -257,7 +260,7 @@ layers configuration. You are free to put any user code."
   (global-set-key (kbd "C-s") 'hippie-expand)
 
   ;; Wait for https://github.com/syl20bnr/spacemacs/pull/4304
-  (spacemacs/set-leader-keys "SPC" 'avy-goto-word-0)
+  (spacemacs/set-leader-keys "SPC" 'avy-goto-word-1)
 
   ;; Workaround for https://github.com/syl20bnr/spacemacs/issues/3477
   (set-face-attribute 'default nil :family "DejaVu Sans Mono for Powerline")
@@ -265,12 +268,39 @@ layers configuration. You are free to put any user code."
 
   (defun hexo_new (post-name)
     (interactive "sPost Name: \n")
-    (let* ((default-directory "~/Blog/lazywei.github.io/")
-           (result (shell-command-to-string (format "~/Blog/lazywei.github.io/node_modules/.bin/hexo new \"%s\"" post-name)))
-           (file-path (substring result (string-match "~/Blog/lazywei.github.io" result) -1))
+    (let* ((blog-dir "~/Blog/lazywei.github.io/")
+           (default-directory "~/Blog/lazywei.github.io/")
+           (hexo-bin (concat blog-dir "node_modules/.bin/hexo"))
+           (cmd-str (concat hexo-bin " new \"%s\""))
+
+           (result (shell-command-to-string (format cmd-str post-name)))
+           (file-path (substring result (string-match blog-dir result) -1))
            )
       (find-file file-path))
     )
+
+  (defun hexo_pub ()
+    (interactive)
+    (let* ((blog-dir "~/Blog/lazywei.github.io/")
+           (default-directory blog-dir)
+           (hexo-bin (concat blog-dir "node_modules/.bin/hexo"))
+           (cmd-str (concat hexo-bin " publish \"%s\""))
+
+           (file-name (car (last (split-string (buffer-file-name) "/"))))
+           (post-name (car (split-string file-name "\\.")))
+
+           (result (shell-command-to-string (format cmd-str post-name)))
+           (pub-file-path (substring result (string-match blog-dir result) -1))
+           )
+      (kill-buffer)
+      (find-file pub-file-path))
+    )
+
+  (setq-default
+   c-default-style "bsd"
+   c-basic-offset 4)
+  (setq-default tab-width 4)
+
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

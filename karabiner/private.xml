@@ -17,6 +17,11 @@
     <equal>org.mozilla.firefox</equal>
   </appdef>
 
+  <appdef>
+    <appname>Telegram Desktop</appname>
+    <equal>com.tdesktop.Telegram</equal>
+  </appdef>
+
   
   <devicevendordef>
     <vendorname>QK_KEYBOARD</vendorname>
@@ -49,6 +54,22 @@
     <device_only>DeviceVendor::QK_KEYBOARD</device_only>
     <autogen> __KeyToKey__ KeyCode::COMMAND_R, KeyCode::OPTION_R </autogen>
     <autogen> __KeyToKey__ KeyCode::OPTION_R, KeyCode::COMMAND_R </autogen>
+  </item>
+
+  <item>
+    <name>Remap Telegram Desktop App (C-E & C-A)</name>
+    <identifier>private.telegram_remap</identifier>
+    <only>Telegram Desktop</only>
+    <autogen>
+      __KeyToKey__
+      KeyCode::E, ModifierFlag::CONTROL_L, 
+      KeyCode::END
+    </autogen>
+    <autogen>
+      __KeyToKey__
+      KeyCode::A, ModifierFlag::CONTROL_L, 
+      KeyCode::HOME
+    </autogen>
   </item>
 
   <!-- <item> -->
