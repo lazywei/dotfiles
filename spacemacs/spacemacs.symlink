@@ -60,7 +60,6 @@ d
 
      (evil-snipe :variables
                  evil-snipe-enable-alternate-f-and-t-behaviors t)
-     unimpaired
      vim-empty-lines
      vinegar
      dash
@@ -90,7 +89,7 @@ values."
    ;; variable is `emacs' then the `holy-mode' is enabled at startup. `hybrid'
    ;; uses emacs key bindings for vim's insert mode, but otherwise leaves evil
    ;; unchanged. (default 'vim)
-   dotspacemacs-editing-style 'evil
+   dotspacemacs-editing-style 'vim
    ;; If non nil output loading progress in `*Messages*' buffer. (default nil)
    dotspacemacs-verbose-loading nil
    ;; Specify the startup banner. Default value is `official', it displays
@@ -295,6 +294,18 @@ layers configuration. You are free to put any user code."
       (kill-buffer)
       (find-file pub-file-path))
     )
+
+  ;; === After save hook function for projectile ===
+  (defun pj-run-after-save ()
+    "Run script to sync on save"
+    (if (and (projectile-project-p)
+             (file-executable-p (projectile-file-truename "run_after_save")))
+        (shell-command (projectile-file-truename "run_after_save"))
+      )
+    )
+
+  (add-hook 'after-save-hook 'pj-run-after-save)
+  ;; ===============================================
 
   (setq-default
    c-default-style "bsd"
