@@ -22,6 +22,10 @@
     <equal>com.tdesktop.Telegram</equal>
   </appdef>
 
+  <appdef>
+    <appname>Chrome</appname>
+    <equal>com.google.Chrome</equal>
+  </appdef>
   
   <devicevendordef>
     <vendorname>QK_KEYBOARD</vendorname>
@@ -69,6 +73,20 @@
       __KeyToKey__
       KeyCode::A, ModifierFlag::CONTROL_L, 
       KeyCode::HOME
+    </autogen>
+  </item>
+
+  <!-- This requires Chrome to set a "pseudo search engine" that executes empty -->
+  <!-- javascript to escape from omnibox to the "fd" keyword. -->
+  <item>
+    <name>Remap Chrome</name>
+    <identifier>private.chrome_remap</identifier>
+    <uielementrole_only>AXTextField</uielementrole_only>
+    <only>Chrome</only>
+    <autogen>
+      __KeyToKey__
+      KeyCode::G, ModifierFlag::CONTROL_L | ModifierFlag::NONE,
+      KeyCode::F, KeyCode::D, KeyCode::RETURN,
     </autogen>
   </item>
 
