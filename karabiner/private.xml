@@ -56,8 +56,8 @@
     <name>Switch Quickfire's Right CMD and Option</name>
     <identifier>private.quickfire_switch</identifier>
     <device_only>DeviceVendor::QK_KEYBOARD</device_only>
-    <autogen> __KeyToKey__ KeyCode::COMMAND_R, KeyCode::OPTION_R </autogen>
-    <autogen> __KeyToKey__ KeyCode::OPTION_R, KeyCode::COMMAND_R </autogen>
+    <autogen> __KeyToKey__ KeyCode::CONTROL_R, KeyCode::OPTION_L </autogen>
+    <autogen> __KeyToKey__ KeyCode::OPTION_R, KeyCode::COMMAND_L </autogen>
   </item>
 
   <item>
