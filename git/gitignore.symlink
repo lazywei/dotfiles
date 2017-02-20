@@ -3,3 +3,11 @@
 *.swp
 
 npm-debug.log
+
+# my psync
+.psync
+
+# GNU Global
+GPATH
+GRTAGS
+GTAGS
