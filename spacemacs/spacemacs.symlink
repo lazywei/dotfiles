@@ -58,6 +58,7 @@ values."
             shell-default-position 'bottom)
      spell-checking
      syntax-checking
+     ycmd
      ;; version-control
      latex
      python
@@ -430,27 +431,32 @@ layers configuration. You are free to put any user code."
   (add-hook 'after-save-hook 'pj-run-after-save)
   ;; ===============================================
 
+  ;; === Setup C/C++ ===
   (setq-default
    c-default-style "bsd"
    c-basic-offset 4)
   (setq-default tab-width 4)
 
-  ;; === Setup flycheck and projectile ===
-  ;; Ref: http://emacs.stackexchange.com/a/13066
-  ;; (defun setup-flycheck-gcc-project-path ()
-  ;;   (let ((root (ignore-errors (projectile-project-root))))
-  ;;     (when root
+  ;; === Setup YCMD ===
+  (setq ycmd-server-command '("python" "/Users/lazywei/Code/ycmd/ycmd"))
+  (setq ycmd-force-semantic-completion t)
+  (setq ycmd-global-config "/Users/lazywei/.ycm_extra_conf.py")
 
-  ;;       (add-to-list
-  ;;        (make-variable-buffer-local 'flycheck-clang-include-path)
-  ;;        root))
-  ;;     ))
+  ;; === Workaround for Elpy ===
+  ;; Ref: https://github.com/jorgenschaefer/elpy/issues/887#issuecomment-281521965
+  (with-eval-after-load 'python
+    (defun python-shell-completion-native-try ()
+      "Return non-nil if can trigger native completion."
+      (let ((python-shell-completion-native-enable t)
+            (python-shell-completion-native-output-timeout
+             python-shell-completion-native-try-output-timeout))
+        (python-shell-completion-native-get-completions
+         (get-buffer-process (current-buffer))
+         nil "_"))))
 
-  ;; (add-hook 'c++-mode-hook 'setup-flycheck-gcc-project-path)
-
-  Setup Eclim
-  (setq eclim-eclipse-dirs "/Applications/Eclipse.app/Contents/Eclipse"
-        eclim-executable "/Applications/Eclipse.app/Contents/Eclipse/eclim")
+  ;; Setup Eclim
+  ;; (setq eclim-eclipse-dirs "/Applications/Eclipse.app/Contents/Eclipse"
+  ;;       eclim-executable "/Applications/Eclipse.app/Contents/Eclipse/eclim")
 
   )
 
@@ -468,7 +474,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (async packed auto-complete anaconda-mode evil flyspell-correct go-mode multiple-cursors avy simple-httpd dash imenu-list zenburn-theme fuzzy lua-mode yasnippet ob-sml sml-mode request with-editor js2-mode eclim auctex-latexmk auctex smartparens highlight flycheck company projectile helm helm-core magit magit-popup git-commit hydra haml-mode winum yapfify yaml-mode xterm-color ws-butler window-numbering which-key web-mode web-beautify volatile-highlights uuidgen use-package toc-org tagedit stickyfunc-enhance srefactor spacemacs-theme spaceline solarized-theme smeargle slim-mode shell-pop scss-mode sass-mode reveal-in-osx-finder restart-emacs rainbow-delimiters quelpa pyvenv pytest pyenv-mode py-isort pug-mode popwin pip-requirements persp-mode pcre2el pbcopy paradox osx-trash osx-dictionary orgit org-plus-contrib org-bullets open-junk-file neotree multi-term move-text monokai-theme mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum livid-mode live-py-mode linum-relative link-hint less-css-mode launchctl json-mode js2-refactor js-doc info+ indent-guide ido-vertical-mode hy-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-mode-manager helm-make helm-gtags helm-gitignore helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag google-translate golden-ratio go-guru go-eldoc gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md ggtags flyspell-correct-helm flycheck-pos-tip flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-snipe evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav dumb-jump dracula-theme disaster cython-mode company-web company-tern company-statistics company-quickhelp company-go company-emacs-eclim company-c-headers company-auctex company-anaconda column-enforce-mode coffee-mode cmake-mode clean-aindent-mode clang-format bracketed-paste auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell))))
+    (flycheck-ycmd company-ycmd ycmd request-deferred deferred async packed auto-complete anaconda-mode evil flyspell-correct go-mode multiple-cursors avy simple-httpd dash imenu-list zenburn-theme fuzzy lua-mode yasnippet ob-sml sml-mode request with-editor js2-mode eclim auctex-latexmk auctex smartparens highlight flycheck company projectile helm helm-core magit magit-popup git-commit hydra haml-mode winum yapfify yaml-mode xterm-color ws-butler window-numbering which-key web-mode web-beautify volatile-highlights uuidgen use-package toc-org tagedit stickyfunc-enhance srefactor spacemacs-theme spaceline solarized-theme smeargle slim-mode shell-pop scss-mode sass-mode reveal-in-osx-finder restart-emacs rainbow-delimiters quelpa pyvenv pytest pyenv-mode py-isort pug-mode popwin pip-requirements persp-mode pcre2el pbcopy paradox osx-trash osx-dictionary orgit org-plus-contrib org-bullets open-junk-file neotree multi-term move-text monokai-theme mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum livid-mode live-py-mode linum-relative link-hint less-css-mode launchctl json-mode js2-refactor js-doc info+ indent-guide ido-vertical-mode hy-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation hide-comnt help-fns+ helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-mode-manager helm-make helm-gtags helm-gitignore helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag google-translate golden-ratio go-guru go-eldoc gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md ggtags flyspell-correct-helm flycheck-pos-tip flx-ido fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-snipe evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav dumb-jump dracula-theme disaster cython-mode company-web company-tern company-statistics company-quickhelp company-go company-emacs-eclim company-c-headers company-auctex company-anaconda column-enforce-mode coffee-mode cmake-mode clean-aindent-mode clang-format bracketed-paste auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

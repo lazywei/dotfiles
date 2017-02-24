@@ -9,7 +9,6 @@ brew 'coreutils'
 brew 'zsh'
 brew 'wget'
 brew 'libgit2'
-brew 'grc'
 brew 'emacs-mac', args: ['with-spacemacs-icon']
 brew 'pyenv'
 
