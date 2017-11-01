@@ -134,8 +134,16 @@ install_dotfiles () {
 
   for src in $(find -H "$DOTFILES_ROOT" -maxdepth 2 -name '*.symlink' -not -path '*.git*')
   do
-    dst="$HOME/.$(basename "${src%.*}")"
-    link_file "$src" "$dst"
+      dst="$HOME/.$(basename "${src%.*}")"
+      # bn=$(basename $src)
+      # printf "bn=$bn\n"
+      # dst=$(echo $src | perl -pe "s|^(.*)/$bn$|\1/.${bn%.symlink}|")
+      # dst=$(echo $dst | perl -pe "s|^$DOTFILES_ROOT/.*?/(.*)$|\1|")
+      # printf "dst=$dst\n"
+      # dst="$HOME/.${dst%.*}"
+      # printf "dst=$dst\n"
+      printf "link_file $src $dst\n"
+      link_file "$src" "$dst"
   done
 }
 

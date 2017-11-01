@@ -11,3 +11,6 @@ npm-debug.log
 GPATH
 GRTAGS
 GTAGS
+
+# YCM
+.ycm_extra_conf.py

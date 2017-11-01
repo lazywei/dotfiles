@@ -1,15 +1,14 @@
 cask_args appdir: '/Applications'
 
 tap 'caskroom/cask'
-tap 'homebrew/bundle'
-tap 'railwaycat/homebrew-emacsmacport'
-
+tap 'Homebrew/bundle'
+tap 'd12frosted/emacs-plus'
 
 brew 'coreutils'
 brew 'zsh'
 brew 'wget'
 brew 'libgit2'
-brew 'emacs-mac', args: ['with-spacemacs-icon']
+brew 'emacs-plus'
 brew 'pyenv'
 
 # brew 'go'
