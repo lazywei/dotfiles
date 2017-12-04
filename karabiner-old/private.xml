@@ -42,13 +42,26 @@
   </item>
 
   <item>
-    <name>Remap firefox</name>
+    <name>Remap Firefox</name>
     <identifier>private.firefox_remap</identifier>
     <only>Firefox</only>
     <autogen>
       __KeyToKey__
       KeyCode::RETURN, ModifierFlag::COMMAND_L,
       KeyCode::RETURN, ModifierFlag::OPTION_L,
+    </autogen>
+    <!-- Ctrl-w -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::W, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_CONTROL,
+      KeyCode::CURSOR_LEFT, ModifierFlag::OPTION_L | ModifierFlag::SHIFT_L,
+      KeyCode::DELETE
+    </autogen>
+    <!-- CMD-L -> F6 -->
+    <autogen>
+      __KeyToKey__
+      KeyCode::L, MODIFIERFLAG_EITHER_LEFT_OR_RIGHT_COMMAND,
+      KeyCode::F6
     </autogen>
   </item>
 
