@@ -1,4 +1,4 @@
-@lazywei's dotfiles
+Dotfiles
 ==========
 
 This repo is based on [@holman](https://github.com/holman/dotfiles)'s dotfiles. For the original and complete instruction, please refer to holman's repo.
