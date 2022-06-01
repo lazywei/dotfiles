@@ -8,3 +8,5 @@ neovim/nvim/plugged/
 git/gitconfig.symlink
 
 ycm/ycm_conf/__pycache__/
+
+.spr.yml
